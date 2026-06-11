@@ -126,72 +126,211 @@
             transition: background 0.3s ease;
         }
 
-        /* ===== PRELOADER ===== */
+        /* ===== ADVANCED PRELOADER ===== */
         .preloader {
             position: fixed;
             inset: 0;
             z-index: 9999;
-            background: rgb(var(--color-bg));
+            background: #050816;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
+            flex-direction: column;
+            overflow: hidden;
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), visibility 0.8s ease;
         }
         .preloader.done {
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
         }
-        .preloader-logo {
+        /* Hex grid background */
+        .preloader::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: gridPan 8s linear infinite;
+            pointer-events: none;
+        }
+        @keyframes gridPan {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+        /* Scan line */
+        .preloader::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(59,130,246,0.8), rgba(124,58,237,0.8), transparent);
+            animation: scanLine 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes scanLine {
+            0% { top: 0; opacity: 1; }
+            100% { top: 100%; opacity: 0.2; }
+        }
+        /* Loader core */
+        .loader-core {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        /* Orbiting rings */
+        .loader-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid transparent;
+        }
+        .loader-ring-1 {
+            width: 140px; height: 140px;
+            border-top-color: #3B82F6;
+            border-right-color: rgba(59,130,246,0.3);
+            animation: spin1 1.6s linear infinite;
+        }
+        .loader-ring-2 {
+            width: 108px; height: 108px;
+            border-bottom-color: #7C3AED;
+            border-left-color: rgba(124,58,237,0.3);
+            animation: spin2 2.2s linear infinite reverse;
+        }
+        .loader-ring-3 {
+            width: 76px; height: 76px;
+            border-top-color: #A855F7;
+            border-right-color: rgba(168,85,247,0.3);
+            animation: spin1 1s linear infinite;
+        }
+        @keyframes spin1 { to { transform: rotate(360deg); } }
+        @keyframes spin2 { to { transform: rotate(360deg); } }
+        /* Center monogram */
+        .loader-center {
+            position: relative;
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            z-index: 2;
+        }
+        .loader-center-text {
             font-family: 'Geist Sans', 'Inter', sans-serif;
-            font-size: 56px;
+            font-size: 18px;
             font-weight: 700;
             letter-spacing: -0.03em;
             background: linear-gradient(135deg, #3B82F6, #7C3AED, #A855F7);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: preloaderPulse 1.2s ease-in-out infinite;
-            position: relative;
+            animation: centerPulse 1.5s ease-in-out infinite;
         }
-        .preloader-logo::after {
-            content: '';
+        @keyframes centerPulse {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(0.95); }
+        }
+        /* Center glow */
+        .loader-center-glow {
             position: absolute;
-            inset: -20px;
+            inset: -24px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(59,130,246,0.2), rgba(124,58,237,0.15), transparent 70%);
-            filter: blur(20px);
-            animation: preloaderGlow 1.2s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(124,58,237,0.25) 0%, transparent 70%);
+            filter: blur(10px);
+            animation: glowPulse 1.5s ease-in-out infinite;
         }
-        @keyframes preloaderPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-        }
-        @keyframes preloaderGlow {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
+        @keyframes glowPulse {
+            0%,100% { opacity: 0.6; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.3); }
         }
-        .preloader-bar {
+        /* Dots orbiting */
+        .loader-dot {
             position: absolute;
-            bottom: 40%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 120px;
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: #3B82F6;
+            top: 0; left: 50%;
+            transform-origin: 0 70px;
+            margin-left: -2.5px;
+        }
+        .loader-dot-1 { animation: orbitDot 1.6s linear infinite; background: #3B82F6; }
+        .loader-dot-2 { animation: orbitDot 1.6s linear infinite 0.53s; background: #7C3AED; }
+        .loader-dot-3 { animation: orbitDot 1.6s linear infinite 1.06s; background: #A855F7; }
+        @keyframes orbitDot { to { transform: rotate(360deg); } }
+        /* Boot text */
+        .loader-boot-text {
+            font-family: 'Geist Sans', 'Inter', monospace;
+            font-size: 11px;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            min-height: 16px;
+        }
+        /* Progress bar */
+        .loader-progress-wrap {
+            width: 200px;
             height: 2px;
             background: rgba(255,255,255,0.05);
             border-radius: 2px;
             overflow: hidden;
+            position: relative;
         }
-        .preloader-bar-fill {
+        .loader-progress-fill {
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #3B82F6, #7C3AED);
             border-radius: 2px;
-            animation: preloaderFill 1.4s ease-out forwards;
+            background: linear-gradient(90deg, #3B82F6, #7C3AED, #A855F7);
+            animation: loaderFill 2.8s cubic-bezier(0.4,0,0.2,1) forwards;
+            position: relative;
         }
-        @keyframes preloaderFill {
+        .loader-progress-fill::after {
+            content: '';
+            position: absolute;
+            right: 0; top: -2px;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #A855F7;
+            box-shadow: 0 0 8px #A855F7;
+        }
+        @keyframes loaderFill {
             0% { width: 0%; }
+            30% { width: 35%; }
+            60% { width: 72%; }
+            85% { width: 91%; }
             100% { width: 100%; }
+        }
+        /* Corner accents */
+        .loader-corner {
+            position: absolute;
+            width: 16px; height: 16px;
+            border-color: rgba(59,130,246,0.4);
+            border-style: solid;
+        }
+        .loader-corner-tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; border-radius: 2px 0 0 0; }
+        .loader-corner-tr { top: 24px; right: 24px; border-width: 2px 2px 0 0; border-radius: 0 2px 0 0; }
+        .loader-corner-bl { bottom: 24px; left: 24px; border-width: 0 0 2px 2px; border-radius: 0 0 0 2px; }
+        .loader-corner-br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; border-radius: 0 0 2px 0; }
+        /* Floating particles */
+        .loader-particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat linear infinite;
+            opacity: 0;
+        }
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+            10% { opacity: 0.6; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-20vh) translateX(30px); opacity: 0; }
         }
 
         /* ===== NOISE OVERLAY ===== */
@@ -739,11 +878,41 @@
 </head>
 <body class="grid-bg">
 
-    <!-- ===== PRELOADER ===== -->
+    <!-- ===== ADVANCED PRELOADER ===== -->
     <div id="preloader" class="preloader">
-        <div class="preloader-logo">SM</div>
-        <div class="preloader-bar">
-            <div class="preloader-bar-fill"></div>
+        <!-- Corner accents -->
+        <div class="loader-corner loader-corner-tl"></div>
+        <div class="loader-corner loader-corner-tr"></div>
+        <div class="loader-corner loader-corner-bl"></div>
+        <div class="loader-corner loader-corner-br"></div>
+
+        <!-- Floating particles -->
+        <div class="loader-particle" style="width:3px;height:3px;background:#3B82F6;left:15%;animation-duration:6s;animation-delay:0s;"></div>
+        <div class="loader-particle" style="width:2px;height:2px;background:#7C3AED;left:30%;animation-duration:8s;animation-delay:1s;"></div>
+        <div class="loader-particle" style="width:4px;height:4px;background:#A855F7;left:55%;animation-duration:5s;animation-delay:0.5s;"></div>
+        <div class="loader-particle" style="width:2px;height:2px;background:#3B82F6;left:70%;animation-duration:7s;animation-delay:2s;"></div>
+        <div class="loader-particle" style="width:3px;height:3px;background:#7C3AED;left:85%;animation-duration:9s;animation-delay:1.5s;"></div>
+
+        <!-- Spinning rings + center monogram -->
+        <div class="loader-core">
+            <div class="loader-ring loader-ring-1"></div>
+            <div class="loader-ring loader-ring-2"></div>
+            <div class="loader-ring loader-ring-3"></div>
+            <div class="loader-dot loader-dot-1"></div>
+            <div class="loader-dot loader-dot-2"></div>
+            <div class="loader-dot loader-dot-3"></div>
+            <div class="loader-center">
+                <div class="loader-center-glow"></div>
+                <span class="loader-center-text">SM</span>
+            </div>
+        </div>
+
+        <!-- Boot sequence text -->
+        <div class="loader-boot-text" id="loaderBootText">Initializing AI Core...</div>
+
+        <!-- Progress bar -->
+        <div class="loader-progress-wrap">
+            <div class="loader-progress-fill"></div>
         </div>
     </div>
 
@@ -875,6 +1044,48 @@
                             <div class="text-xs text-white/40 mt-1 uppercase tracking-widest font-medium">Industries<br>Served</div>
                         </div>
                     </div>
+
+                    <!-- ===== LIVE HUD TERMINAL WIDGET ===== -->
+                    <div class="mt-8 reveal reveal-delay-5" style="max-width: 480px;">
+                        <div class="glass rounded-2xl p-4 border border-white/8" style="backdrop-filter: blur(24px); background: rgba(5,8,22,0.7);">
+                            <!-- Header bar -->
+                            <div class="flex items-center justify-between mb-3 pb-2.5" style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-400" style="animation: dotPulse 1.5s ease-in-out infinite;"></span>
+                                    <span class="text-[10px] font-mono tracking-widest text-white/45 uppercase">agent_node_01</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-[10px] font-mono text-blue-400" id="hudAccuracy">ACC: 99.21%</span>
+                                    <span class="text-[9px] font-mono text-white/25">● LIVE</span>
+                                </div>
+                            </div>
+                            <!-- Main content row -->
+                            <div class="flex items-end gap-4">
+                                <!-- Live scrolling logs -->
+                                <div class="flex-1 font-mono text-[9px] text-white/40 h-10 overflow-hidden relative">
+                                    <div class="absolute inset-0 flex flex-col justify-end gap-1" id="hudLogs">
+                                        <div>[SYS] learning rate adapted to 1e-4</div>
+                                        <div>[AGENT] query intent routed → rag</div>
+                                        <div>[AGENT] tool: search executed</div>
+                                    </div>
+                                </div>
+                                <!-- Sparkline -->
+                                <div class="w-20 h-10 opacity-80 shrink-0">
+                                    <svg class="w-full h-full" viewBox="0 0 100 50" preserveAspectRatio="none">
+                                        <defs>
+                                            <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"></stop>
+                                                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <path id="sparklineBg" d="M 0 50 L 0 35 L 20 28 L 40 40 L 60 20 L 80 15 L 100 10 L 100 50 Z" fill="url(#sparklineGrad)"></path>
+                                        <path id="sparklineLine" d="M 0 35 L 20 28 L 40 40 L 60 20 L 80 15 L 100 10" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <circle id="sparklineDot" cx="100" cy="10" r="3" fill="#60A5FA"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Right: Enhanced Profile Photo -->
@@ -928,42 +1139,7 @@
                             </div>
                         </div>
 
-                        <!-- Futuristic HUD System Monitor -->
-                        <div class="absolute bottom-6 left-6 right-6 z-30 glass rounded-2xl p-4 flex flex-col gap-2.5 shadow-2xl border border-white/10" style="backdrop-filter: blur(24px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
-                            <div class="flex items-center justify-between border-b border-white/5 pb-1.5">
-                                <div class="flex items-center gap-1.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                                    <span class="text-[9px] font-mono tracking-wider text-white/50 uppercase">agent_node_01</span>
-                                </div>
-                                <span class="text-[9px] font-mono text-accent-blue" id="hudAccuracy">ACC: 99.21%</span>
-                            </div>
-                            
-                            <!-- Mini Sparkline and Log -->
-                            <div class="flex items-center gap-3">
-                                <!-- Live Scrolling Logs -->
-                                <div class="flex-1 font-mono text-[8.5px] text-white/45 h-7 overflow-hidden relative">
-                                    <div class="absolute inset-0 flex flex-col justify-end gap-0.5" id="hudLogs">
-                                        <div>[SYS] loading agent framework...</div>
-                                        <div>[OK] neural backend initialized.</div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Mini SVG Sparkline -->
-                                <div class="w-16 h-7 opacity-80 shrink-0">
-                                    <svg class="w-full h-full" viewBox="0 0 100 50">
-                                        <defs>
-                                            <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"></stop>
-                                                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"></stop>
-                                            </linearGradient>
-                                        </defs>
-                                        <path id="sparklineBg" d="M 0 50 L 0 35 L 20 28 L 40 40 L 60 20 L 80 15 L 100 10 L 100 50 Z" fill="url(#sparklineGrad)"></path>
-                                        <path id="sparklineLine" d="M 0 35 L 20 28 L 40 40 L 60 20 L 80 15 L 100 10" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <circle id="sparklineDot" cx="100" cy="10" r="3" fill="#60A5FA"></circle>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -1652,18 +1828,50 @@
     <!-- ============ SCRIPTS ============ -->
     <script>
         // ===== PRELOADER =====
+        const bootMessages = [
+            'Initializing AI Core...',
+            'Loading Neural Backend...',
+            'Connecting Agent Node 01...',
+            'Calibrating RAG Pipeline...',
+            'System Ready.'
+        ];
+        let bootIdx = 0;
+        const bootEl = document.getElementById('loaderBootText');
+        const bootInterval = setInterval(() => {
+            bootIdx++;
+            if (bootEl && bootIdx < bootMessages.length) {
+                bootEl.textContent = bootMessages[bootIdx];
+            }
+            if (bootIdx >= bootMessages.length - 1) {
+                clearInterval(bootInterval);
+            }
+        }, 560);
+
         function dismissPreloader() {
             const preloader = document.getElementById('preloader');
             if (preloader && !preloader.classList.contains('done')) {
                 preloader.classList.add('done');
             }
         }
-        // Dismiss after page fully loads (all resources)
-        window.addEventListener('load', () => {
-            setTimeout(dismissPreloader, 1600);
-        });
-        // Hard fallback: always dismiss after 3.5s no matter what
-        setTimeout(dismissPreloader, 3500);
+
+        // Guarantee a minimum display time of 2.8s for cinematic loader
+        const minLoaderTime = 2800;
+        const startTime = Date.now();
+
+        function handlePageLoad() {
+            const elapsed = Date.now() - startTime;
+            const remaining = Math.max(0, minLoaderTime - elapsed);
+            setTimeout(dismissPreloader, remaining);
+        }
+
+        if (document.readyState === 'complete') {
+            handlePageLoad();
+        } else {
+            window.addEventListener('load', handlePageLoad);
+        }
+
+        // Hard fallback: always dismiss after 4.5s no matter what
+        setTimeout(dismissPreloader, 4500);
 
         // ===== TYPING EFFECT =====
         const typedEl = document.getElementById('typedHero');
@@ -1960,7 +2168,10 @@
             
             const acc = (99.1 + Math.random() * 0.4).toFixed(2);
             hudAccuracy.textContent = `ACC: ${acc}%`;
-                    }
+            
+            // Update the sparkline graph alongside new log entries
+            updateSparkline();
+        }
         setInterval(addHudLog, 2500);
     </script>
 
