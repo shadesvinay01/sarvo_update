@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarveshwar Mandal — AI & Data Science Consulting</title>
+    <meta name="description" content="Building intelligent systems that create real business value. AI consulting, data science, and technology advisory for startups and businesses.">
+    <meta name="author" content="Sarveshwar Mandal">
+    <meta name="theme-color" content="#050816">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sarveshwarmandal.com/">
+    <meta property="og:title" content="Sarveshwar Mandal — AI & Data Science Consulting">
+    <meta property="og:description" content="Building intelligent systems that create real business value. AI consulting, data science, and technology advisory for startups and businesses.">
+    <meta property="og:image" content="https://sarveshwarmandal.com/sarveshwar.jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:site_name" content="Sarveshwar Mandal">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sarveshwar Mandal — AI & Data Science Consulting">
+    <meta name="twitter:description" content="Building intelligent systems that create real business value.">
+    <meta name="twitter:image" content="https://sarveshwarmandal.com/sarveshwar.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://sarveshwarmandal.com/">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sarveshwar Mandal",
+      "url": "https://sarveshwarmandal.com",
+      "image": "https://sarveshwarmandal.com/sarveshwar.jpg",
+      "jobTitle": "AI & Data Science Consultant",
+      "description": "Building intelligent systems that create real business value.",
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Data Science", "Generative AI", "Multi-Agent Systems", "Software Engineering", "Product Strategy"],
+      "sameAs": ["https://www.linkedin.com/in/sarveshwarm/", "https://github.com/sarveshwarmandal"],
+      "address": { "@type": "PostalAddress", "addressCountry": "IN" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Sarveshwar Mandal — AI & Data Science Consulting",
+      "url": "https://sarveshwarmandal.com",
+      "description": "AI consulting, data science, and technology advisory for startups and businesses.",
+      "founder": { "@type": "Person", "name": "Sarveshwar Mandal" },
+      "areaServed": "Worldwide",
+      "serviceType": ["AI Consulting", "Data Science", "Technology Advisory", "AI Product Development"]
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/style.min.css" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark': 'rgb(var(--color-bg) / <alpha-value>)',
+                        'dark-2': 'rgb(var(--color-bg-2) / <alpha-value>)',
+                        'accent-blue': 'rgb(var(--color-accent-blue) / <alpha-value>)',
+                        'accent-purple': 'rgb(var(--color-accent-purple) / <alpha-value>)',
+                        'glow': 'rgb(var(--color-glow) / <alpha-value>)',
+                    },
+                    fontFamily: {
+                        'geist': ['"Geist Sans"', 'Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-bg: 5 8 22; /* #050816 */
+            --color-bg-2: 10 15 31; /* #0A0F1F */
+            --color-accent-blue: 59 130 246; /* #3B82F6 */
+            --color-accent-purple: 124 58 237; /* #7C3AED */
+            --color-glow: 168 85 247; /* #A855F7 */
+            
+            --color-border-glow: linear-gradient(135deg, rgba(59,130,246,0.3), rgba(124,58,237,0.3), rgba(168,85,247,0.1));
+            --color-conic-glow: conic-gradient(from var(--border-angle, 0deg), rgb(59,130,246), rgb(124,58,237), rgb(168,85,247), rgb(59,130,246));
+            --color-gradient-primary: linear-gradient(135deg, rgb(59,130,246) 0%, rgb(124,58,237) 50%, rgb(168,85,247) 100%);
+            --color-gradient-cta: linear-gradient(135deg, rgb(59,130,246), rgb(124,58,237));
+            --color-gradient-cta-hover: linear-gradient(135deg, rgb(96,165,250), rgb(139,92,246));
+            --color-preloader-logo: linear-gradient(135deg, rgb(59,130,246), rgb(124,58,237), rgb(168,85,247));
+        }
+        body.theme-slate {
+            --color-bg: 15 23 42; /* #0F172A */
+            --color-bg-2: 30 41 59; /* #1E293B */
+            --color-accent-blue: 6 182 212; /* #06B6D4 */
+            --color-accent-purple: 14 165 233; /* #0EA5E9 */
+            --color-glow: 20 184 166; /* #14B8A6 */
+            
+            --color-border-glow: linear-gradient(135deg, rgba(6,182,212,0.3), rgba(14,165,233,0.3), rgba(20,184,166,0.1));
+            --color-conic-glow: conic-gradient(from var(--border-angle, 0deg), rgb(6,182,212), rgb(14,165,233), rgb(20,184,166), rgb(6,182,212));
+            --color-gradient-primary: linear-gradient(135deg, rgb(6,182,212) 0%, rgb(14,165,233) 50%, rgb(20,184,166) 100%);
+            --color-gradient-cta: linear-gradient(135deg, rgb(6,182,212), rgb(14,165,233));
+            --color-gradient-cta-hover: linear-gradient(135deg, rgb(34,211,238), rgb(56,189,248));
+            --color-preloader-logo: linear-gradient(135deg, rgb(6,182,212), rgb(14,165,233), rgb(20,184,166));
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Geist Sans', 'Inter', sans-serif;
+            background: rgb(var(--color-bg));
+            color: #FFFFFF;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background 0.3s ease;
+        }
+
+        /* ===== PRELOADER ===== */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgb(var(--color-bg));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        .preloader.done {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .preloader-logo {
+            font-family: 'Geist Sans', 'Inter', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #3B82F6, #7C3AED, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: preloaderPulse 1.2s ease-in-out infinite;
+            position: relative;
+        }
+        .preloader-logo::after {
+            content: '';
+            position: absolute;
+            inset: -20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59,130,246,0.2), rgba(124,58,237,0.15), transparent 70%);
+            filter: blur(20px);
+            animation: preloaderGlow 1.2s ease-in-out infinite;
+        }
+        @keyframes preloaderPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+        @keyframes preloaderGlow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        .preloader-bar {
+            position: absolute;
+            bottom: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .preloader-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #3B82F6, #7C3AED);
+            border-radius: 2px;
+            animation: preloaderFill 1.4s ease-out forwards;
+        }
+        @keyframes preloaderFill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* ===== NOISE OVERLAY ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 128px 128px;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgb(var(--color-bg)); }
+        ::-webkit-scrollbar-thumb { background: rgb(var(--color-accent-purple)); border-radius: 3px; }
+
+        section[id] { scroll-margin-top: 80px; }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: var(--color-gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== TYPING EFFECT ===== */
+        .typed-text {
+            display: inline;
+            border-right: 2px solid #7C3AED;
+            animation: blink 0.7s step-end infinite;
+        }
+        .typed-text.done {
+            border-right-color: transparent;
+            animation: none;
+        }
+        @keyframes blink {
+            50% { border-right-color: transparent; }
+        }
+
+        /* Logo */
+        .logo-sm {
+            background: var(--color-gradient-cta);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: -0.02em;
+        }
+        .logo-glass {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 8px 16px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        .logo-glass::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(var(--color-accent-blue),0.1), rgba(var(--color-accent-purple),0.1));
+            border-radius: 12px;
+        }
+
+        /* Grid Background */
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(var(--color-accent-blue), 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(var(--color-accent-blue), 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Glass */
+        .glass {
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .glass-strong {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Hero Halo */
+        .hero-halo {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(var(--color-accent-blue),0.15) 0%, rgba(var(--color-accent-purple),0.1) 40%, transparent 70%);
+            filter: blur(40px);
+            animation: haloPulse 4s ease-in-out infinite;
+        }
+        @keyframes haloPulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* Floating Cards */
+        .float-card { animation: floatCard 6s ease-in-out infinite; }
+        .float-card:nth-child(2) { animation-delay: 1.5s; }
+        .float-card:nth-child(3) { animation-delay: 3s; }
+        .float-card:nth-child(4) { animation-delay: 4.5s; }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        .float-card-inner {
+            will-change: transform, box-shadow;
+        }
+        .float-card-inner:hover {
+            border-color: rgba(var(--color-accent-blue), 0.25) !important;
+            box-shadow: 0 10px 30px rgba(var(--color-accent-blue), 0.15), 0 10px 30px rgba(var(--color-accent-purple), 0.1);
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        /* Gradient Border */
+        .gradient-border {
+            position: relative;
+            background: rgb(var(--color-bg-2));
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: var(--color-border-glow);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(var(--color-accent-blue), 0.2), rgba(var(--color-accent-purple), 0.2), transparent);
+        }
+
+        /* CTA Button */
+        .cta-primary {
+            background: var(--color-gradient-cta);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(var(--color-accent-blue), 0.3), 0 10px 40px rgba(var(--color-accent-purple), 0.2);
+        }
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--color-gradient-cta-hover);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .cta-primary:hover::before { opacity: 1; }
+        .cta-primary span, .cta-primary iconify-icon { position: relative; z-index: 1; }
+
+        /* Shimmer CTA for contact */
+        .cta-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(255,255,255,0.1) 50%,
+                transparent 100%
+            );
+            transform: rotate(30deg);
+            animation: shimmerSlide 3s ease-in-out infinite;
+            z-index: 1;
+        }
+        @keyframes shimmerSlide {
+            0% { transform: rotate(30deg) translateX(-150%); }
+            100% { transform: rotate(30deg) translateX(150%); }
+        }
+
+        .cta-secondary {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .badge-glow {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            color: #60A5FA;
+        }
+        .badge-glow .dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #3B82F6;
+            animation: dotPulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes dotPulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(59,130,246,0); }
+        }
+
+        /* Service Card */
+        .service-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.2) !important;
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.08), 0 20px 60px rgba(124, 58, 237, 0.05);
+        }
+
+        .metric-value { font-variant-numeric: tabular-nums; }
+
+        /* Cap Item */
+        .cap-item { transition: all 0.3s ease; }
+        .cap-item:hover {
+            background: rgba(255,255,255,0.04) !important;
+            border-color: rgba(59,130,246,0.3) !important;
+        }
+        .cap-item:hover .cap-dot {
+            background: #3B82F6;
+            box-shadow: 0 0 8px rgba(59,130,246,0.5);
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sticky-cta.visible { transform: translateY(0); }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* Toast */
+        .toast {
+            position: fixed; bottom: 100px; left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        /* Canvas */
+        #neuralCanvas {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+        }
+
+        /* ===== HERO IMAGE — ANIMATED GRADIENT BORDER ===== */
+        .hero-image-container {
+            position: relative;
+            width: 380px;
+            height: 460px;
+        }
+        .hero-photo-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            padding: 3px;
+            background: conic-gradient(from var(--border-angle, 0deg), #3B82F6, #7C3AED, #A855F7, #3B82F6);
+            animation: rotateBorder 6s linear infinite;
+            position: relative;
+            z-index: 10;
+        }
+        @property --border-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+        @keyframes rotateBorder {
+            to { --border-angle: 360deg; }
+        }
+        /* Fallback for browsers without @property */
+        @supports not (background: conic-gradient(from 0deg, red, blue)) {
+            .hero-photo-frame {
+                background: linear-gradient(135deg, #3B82F6, #7C3AED, #A855F7);
+            }
+        }
+        .hero-photo-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            overflow: hidden;
+            position: relative;
+            background: #050816;
+        }
+        .hero-photo-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(5,8,22,0.6) 0%, transparent 40%, rgba(5,8,22,0.1) 100%);
+            border-radius: 22px;
+        }
+        /* Ring glow behind photo */
+        .hero-ring-glow {
+            position: absolute;
+            inset: -15px;
+            border-radius: 30px;
+            background: conic-gradient(from var(--border-angle, 0deg), rgba(59,130,246,0.3), rgba(124,58,237,0.25), rgba(168,85,247,0.2), rgba(59,130,246,0.3));
+            animation: rotateBorder 6s linear infinite;
+            filter: blur(20px);
+            z-index: 5;
+        }
+
+        /* Article Card */
+        .article-card { transition: all 0.3s ease; }
+        .article-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59,130,246,0.2) !important;
+        }
+
+        /* Comparison */
+        .vs-bad { border-color: rgba(239, 68, 68, 0.15) !important; background: rgba(239, 68, 68, 0.02) !important; }
+        .vs-good { border-color: rgba(59, 130, 246, 0.2) !important; background: rgba(59, 130, 246, 0.03) !important; }
+
+        /* Nav */
+        .nav-link {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+        .nav-link:hover, .nav-link.active { color: #fff; }
+
+        .trust-badge { transition: all 0.3s ease; }
+        .trust-badge:hover {
+            transform: translateY(-2px);
+            border-color: rgba(59,130,246,0.3) !important;
+            box-shadow: 0 8px 30px rgba(59,130,246,0.1);
+        }
+
+        .case-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .case-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(124,58,237,0.2) !important;
+        }
+
+        /* ===== MARQUEE TICKER ===== */
+        .marquee-container {
+            overflow: hidden;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-track {
+            display: flex;
+            gap: 48px;
+            animation: marqueeScroll 30s linear infinite;
+            width: max-content;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        @keyframes marqueeScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            color: rgba(255,255,255,0.35);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            transition: color 0.3s;
+        }
+        .marquee-item:hover { color: rgba(255,255,255,0.7); }
+        .marquee-dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: rgba(59,130,246,0.4);
+            flex-shrink: 0;
+        }
+
+        /* ===== TESTIMONIAL ===== */
+        .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59,130,246,0.2) !important;
+            box-shadow: 0 20px 60px rgba(59,130,246,0.06);
+        }
+        .testimonial-stars {
+            display: flex;
+            gap: 2px;
+        }
+        .testimonial-stars iconify-icon {
+            color: #FBBF24;
+        }
+
+        /* ===== CONTACT ANIMATED BG ===== */
+        .contact-glow-bg {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        .contact-glow-bg .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: contactFloat 8s ease-in-out infinite;
+        }
+        .contact-glow-bg .blob-1 {
+            width: 400px; height: 400px;
+            background: rgba(59,130,246,0.08);
+            top: -100px; right: -100px;
+            animation-delay: 0s;
+        }
+        .contact-glow-bg .blob-2 {
+            width: 350px; height: 350px;
+            background: rgba(124,58,237,0.08);
+            bottom: -100px; left: -100px;
+            animation-delay: 2s;
+        }
+        .contact-glow-bg .blob-3 {
+            width: 250px; height: 250px;
+            background: rgba(168,85,247,0.06);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+        }
+        @keyframes contactFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 15px) scale(0.95); }
+        }
+
+        /* ===== PARALLAX ELEMENTS ===== */
+        .parallax-layer {
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero-image-container { width: 260px; height: 320px; margin: 0 auto; }
+            .float-card { display: none; }
+            .hero-halo { width: 300px; height: 300px; }
+            .hero-ring-glow { inset: -10px; }
+        }
+        @media (max-width: 480px) {
+            .hero-image-container { width: 220px; height: 270px; }
+            h1 { font-size: clamp(2rem, 10vw, 4rem) !important; }
+        }
+        @supports (padding-bottom: env(safe-area-inset-bottom)) {
+            .sticky-cta { padding-bottom: calc(1rem + env(safe-area-inset-bottom)); }
+        }
+
+        /* Quiz Styles */
+        .quiz-step { display: none; }
+        .quiz-step.active { display: flex; }
+        .quiz-opt {
+            background: rgba(255, 255, 255, 0.02) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.25s ease;
+        }
+        .quiz-opt:hover {
+            background: rgba(255, 255, 255, 0.06) !important;
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo">SM</div>
+        <div class="preloader-bar">
+            <div class="preloader-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- Sticky CTA -->
+    <div id="stickyCta" class="sticky-cta fixed bottom-0 left-0 right-0 z-50 px-4 pb-4">
+        <div class="max-w-3xl mx-auto glass-strong rounded-2xl px-6 py-4 flex items-center justify-between gap-4">
+            <p class="text-sm text-white/70 hidden sm:block">Ready to build intelligent systems for your business?</p>
+            <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary text-sm py-3 px-6 ml-auto whitespace-nowrap">
+                <span>Book Strategy Call</span>
+                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast">
+        <div class="glass-strong rounded-xl px-6 py-4 flex items-center gap-3">
+            <iconify-icon icon="lucide:check-circle" width="20" class="text-green-400"></iconify-icon>
+            <span id="toastMsg" class="text-sm font-medium">Success!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-dark/85" style="backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="logo-glass flex items-center gap-3"><span class="logo-sm">SM</span></a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#why-me" class="nav-link">Why Me</a>
+                <a href="#case-studies" class="nav-link">Case Studies</a>
+                <a href="#process" class="nav-link">Process</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#insights" class="nav-link">Insights</a>
+            </div>
+            <div class="hidden lg:flex items-center gap-4">
+                <button id="themeToggleBtn" class="w-10 h-10 flex items-center justify-center rounded-xl glass hover:border-white/20 transition-all" aria-label="Toggle Theme">
+                    <iconify-icon icon="lucide:palette" width="18" class="text-white/85"></iconify-icon>
+                </button>
+                <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary text-sm py-2.5 px-5">
+                    <span>Book Call</span>
+                    <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon>
+                </a>
+            </div>
+            <div class="flex items-center gap-2 lg:hidden">
+                <button id="themeToggleBtnMob" class="w-10 h-10 flex items-center justify-center rounded-xl glass" aria-label="Toggle Theme">
+                    <iconify-icon icon="lucide:palette" width="18" class="text-white/85"></iconify-icon>
+                </button>
+                <button id="menuBtn" class="w-10 h-10 flex items-center justify-center rounded-xl glass" aria-label="Open menu">
+                    <iconify-icon icon="lucide:menu" width="20" class="text-white"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 bg-dark/95 backdrop-blur-xl flex flex-col" aria-hidden="true">
+        <div class="px-6 h-16 flex items-center justify-between" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <span class="logo-sm text-xl">SM</span>
+            <button id="closeMenu" class="w-10 h-10 flex items-center justify-center rounded-xl glass" aria-label="Close menu">
+                <iconify-icon icon="lucide:x" width="20" class="text-white"></iconify-icon>
+            </button>
+        </div>
+        <div class="flex-1 flex flex-col justify-center px-8 gap-6">
+            <a href="#services" class="text-3xl font-light text-white/80 hover:text-white transition-colors mobile-link">Services</a>
+            <a href="#why-me" class="text-3xl font-light text-white/80 hover:text-white transition-colors mobile-link">Why Me</a>
+            <a href="#case-studies" class="text-3xl font-light text-white/80 hover:text-white transition-colors mobile-link">Case Studies</a>
+            <a href="#process" class="text-3xl font-light text-white/80 hover:text-white transition-colors mobile-link">Process</a>
+            <a href="#about" class="text-3xl font-light text-white/80 hover:text-white transition-colors mobile-link">About</a>
+            <a href="#insights" class="text-3xl font-light text-white/80 hover:text-white transition-colors mobile-link">Insights</a>
+            <div class="pt-6" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary w-full justify-center mobile-link">
+                    <span>Book Strategy Call</span>
+                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <div class="parallax-layer absolute top-0 right-0 w-[800px] h-[800px] rounded-full" data-speed="0.02" style="background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 60%); filter: blur(80px);"></div>
+        <div class="parallax-layer absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full" data-speed="0.03" style="background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 60%); filter: blur(80px);"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <!-- Left -->
+                <div>
+                    <div class="badge badge-glow mb-8 reveal">
+                        <span class="dot"></span>
+                        Available for Consulting &amp; Advisory
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[0.95] tracking-[-0.04em] mb-6 reveal reveal-delay-1">
+                        Building Intelligent Systems<br>
+                        <span class="gradient-text typed-text" id="typedHero"></span><br>
+                        Business Value
+                    </h1>
+
+                    <p class="text-lg text-white/60 leading-relaxed max-w-xl mb-10 reveal reveal-delay-2">
+                        I help startups and businesses automate workflows, unlock insights from data, and build intelligent products using AI, Machine Learning, Data Science, and modern software engineering.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 mb-14 reveal reveal-delay-3">
+                        <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary">
+                            <span>Book Strategy Call</span>
+                            <iconify-icon icon="lucide:arrow-right" width="18"></iconify-icon>
+                        </a>
+                        <a href="#services" class="cta-secondary">
+                            <span>View Services</span>
+                            <iconify-icon icon="lucide:chevron-down" width="16"></iconify-icon>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 reveal reveal-delay-4">
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-semibold tracking-tight metric-value" data-target="10">0</div>
+                            <div class="text-xs text-white/40 mt-1 uppercase tracking-widest font-medium">Years Building<br>Technology</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-semibold tracking-tight metric-value" data-target="30">0</div>
+                            <div class="text-xs text-white/40 mt-1 uppercase tracking-widest font-medium">Projects<br>Delivered</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-semibold tracking-tight metric-value" data-target="20">0</div>
+                            <div class="text-xs text-white/40 mt-1 uppercase tracking-widest font-medium">Products &<br>Solutions</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl sm:text-3xl font-semibold tracking-tight metric-value" data-target="5">0</div>
+                            <div class="text-xs text-white/40 mt-1 uppercase tracking-widest font-medium">Industries<br>Served</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Enhanced Profile Photo -->
+                <div class="relative flex justify-center lg:justify-end reveal reveal-delay-2">
+                    <div class="hero-image-container">
+                        <canvas id="neuralCanvas"></canvas>
+                        <div class="hero-halo" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+
+                        <!-- Animated ring glow -->
+                        <div class="hero-ring-glow"></div>
+
+                        <!-- Animated gradient border frame -->
+                        <div class="hero-photo-frame">
+                            <div class="hero-photo-inner">
+                                <img src="sarveshwar.jpg" alt="Sarveshwar Mandal — AI & Data Science Consultant" loading="eager">
+                                <div class="hero-image-overlay"></div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Cards -->
+                        <div class="float-card absolute -left-12 sm:-left-20 top-16 z-20">
+                            <div class="float-card-inner glass rounded-xl px-4 py-3 flex items-center gap-3 cursor-default" style="border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, box-shadow;">
+                                <div class="w-8 h-8 rounded-lg bg-accent-blue/20 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:bot" width="16" class="text-accent-blue"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium text-white/80">AI Automation</span>
+                            </div>
+                        </div>
+                        <div class="float-card absolute -right-8 sm:-right-16 top-32 z-20">
+                            <div class="float-card-inner glass rounded-xl px-4 py-3 flex items-center gap-3 cursor-default" style="border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, box-shadow;">
+                                <div class="w-8 h-8 rounded-lg bg-accent-purple/20 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:bar-chart-3" width="16" class="text-accent-purple"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium text-white/80">Business Intelligence</span>
+                            </div>
+                        </div>
+                        <div class="float-card absolute -left-8 sm:-left-16 bottom-32 z-20">
+                            <div class="float-card-inner glass rounded-xl px-4 py-3 flex items-center gap-3 cursor-default" style="border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, box-shadow;">
+                                <div class="w-8 h-8 rounded-lg bg-glow/20 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:network" width="16" class="text-glow"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium text-white/80">Multi-Agent Systems</span>
+                            </div>
+                        </div>
+                        <div class="float-card absolute -right-6 sm:-right-12 bottom-16 z-20">
+                            <div class="float-card-inner glass rounded-xl px-4 py-3 flex items-center gap-3 cursor-default" style="border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, box-shadow;">
+                                <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center">
+                                    <iconify-icon icon="lucide:compass" width="16" class="text-green-400"></iconify-icon>
+                                </div>
+                                <span class="text-xs font-medium text-white/80">Technology Strategy</span>
+                            </div>
+                        </div>
+
+                        <!-- Futuristic HUD System Monitor -->
+                        <div class="absolute bottom-6 left-6 right-6 z-30 glass rounded-2xl p-4 flex flex-col gap-2.5 shadow-2xl border border-white/10" style="backdrop-filter: blur(24px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+                            <div class="flex items-center justify-between border-b border-white/5 pb-1.5">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                    <span class="text-[9px] font-mono tracking-wider text-white/50 uppercase">agent_node_01</span>
+                                </div>
+                                <span class="text-[9px] font-mono text-accent-blue" id="hudAccuracy">ACC: 99.21%</span>
+                            </div>
+                            
+                            <!-- Mini Sparkline and Log -->
+                            <div class="flex items-center gap-3">
+                                <!-- Live Scrolling Logs -->
+                                <div class="flex-1 font-mono text-[8.5px] text-white/45 h-7 overflow-hidden relative">
+                                    <div class="absolute inset-0 flex flex-col justify-end gap-0.5" id="hudLogs">
+                                        <div>[SYS] loading agent framework...</div>
+                                        <div>[OK] neural backend initialized.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Mini SVG Sparkline -->
+                                <div class="w-16 h-7 opacity-80 shrink-0">
+                                    <svg class="w-full h-full" viewBox="0 0 100 50">
+                                        <defs>
+                                            <linearGradient id="sparklineGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"></stop>
+                                                <stop offset="100%" stop-color="#3B82F6" stop-opacity="0"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                        <path id="sparklineBg" d="M 0 50 L 0 35 L 20 28 L 40 40 L 60 20 L 80 15 L 100 10 L 100 50 Z" fill="url(#sparklineGrad)"></path>
+                                        <path id="sparklineLine" d="M 0 35 L 20 28 L 40 40 L 60 20 L 80 15 L 100 10" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <circle id="sparklineDot" cx="100" cy="10" r="3" fill="#60A5FA"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MARQUEE TECH TICKER ============ -->
+    <section class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 reveal">
+                <h2 class="text-2xl sm:text-3xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight">
+                    Helping Founders &amp; Businesses<br>
+                    <span class="gradient-text">Build Smarter Systems</span>
+                </h2>
+            </div>
+        </div>
+        <div class="marquee-container py-8 reveal reveal-delay-1">
+            <div class="marquee-track">
+                <div class="marquee-item"><div class="marquee-dot"></div>Python</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>TensorFlow</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>PyTorch</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>LangChain</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>OpenAI</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>AWS</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Computer Vision</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>RAG Systems</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Multi-Agent AI</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Data Pipelines</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>NLP</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Predictive Analytics</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>FastAPI</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Docker</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Kubernetes</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>MLOps</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><div class="marquee-dot"></div>Python</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>TensorFlow</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>PyTorch</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>LangChain</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>OpenAI</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>AWS</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Computer Vision</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>RAG Systems</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Multi-Agent AI</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Data Pipelines</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>NLP</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Predictive Analytics</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>FastAPI</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Docker</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>Kubernetes</div>
+                <div class="marquee-item"><div class="marquee-dot"></div>MLOps</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Services</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    How I Can <span class="gradient-text">Help</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-1">
+                    <div class="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:bot" width="24" class="text-accent-blue"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold tracking-tight mb-3">AI Automation</h3>
+                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Automate repetitive workflows using intelligent systems that work around the clock.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Workflow Automation</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">AI Agents</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Knowledge Systems</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Customer Support AI</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Process Optimization</span></div>
+                    </div>
+                </div>
+                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-2">
+                    <div class="w-12 h-12 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:bar-chart-3" width="24" class="text-accent-purple"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold tracking-tight mb-3">Data Science</h3>
+                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Turn data into actionable business insights that drive better decisions.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Predictive Analytics</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Forecasting</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">BI Dashboards</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Data Strategy</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Decision Intelligence</span></div>
+                    </div>
+                </div>
+                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-3">
+                    <div class="w-12 h-12 rounded-xl bg-glow/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:rocket" width="24" class="text-glow"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold tracking-tight mb-3">AI Product Development</h3>
+                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Build intelligent products from idea to deployment with scalable architectures.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">MVP Development</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">Generative AI</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">RAG Systems</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">AI Applications</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">Scalable Architectures</span></div>
+                    </div>
+                </div>
+                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-4">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:compass" width="24" class="text-green-400"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold tracking-tight mb-3">Technology Advisory</h3>
+                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Strategic guidance for startups and businesses navigating technology decisions.</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Product Strategy</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Technology Roadmaps</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Architecture Reviews</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">AI Adoption</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Leadership Guidance</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ ROI CALCULATOR ============ -->
+    <section id="roi-calculator" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Savings Estimate</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    AI Automation <span class="gradient-text">ROI Calculator</span>
+                </h2>
+                <p class="text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">Drag the sliders below to estimate the potential monthly and yearly savings you can unlock with intelligent systems.</p>
+            </div>
+            <div class="grid lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+                <!-- Left: Sliders -->
+                <div class="lg:col-span-7 gradient-border p-8 sm:p-10 reveal reveal-delay-1">
+                    <div class="space-y-8">
+                        <!-- Slider 1 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label for="sliderRate" class="text-sm font-semibold tracking-tight text-white/80">Average Hourly Rate ($)</label>
+                                <span class="text-base font-bold text-accent-blue font-mono" id="valRate">$75/hr</span>
+                            </div>
+                            <input type="range" id="sliderRate" min="30" max="250" value="75" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-blue" style="outline: none;">
+                            <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>$30</span><span>$250</span></div>
+                        </div>
+                        <!-- Slider 2 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label for="sliderHours" class="text-sm font-semibold tracking-tight text-white/80">Manual Hours Saved / Wk per Employee</label>
+                                <span class="text-base font-bold text-accent-purple font-mono" id="valHours">15 hrs</span>
+                            </div>
+                            <input type="range" id="sliderHours" min="5" max="40" value="15" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-purple" style="outline: none;">
+                            <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>5 hrs</span><span>40 hrs</span></div>
+                        </div>
+                        <!-- Slider 3 -->
+                        <div>
+                            <div class="flex justify-between items-center mb-3">
+                                <label for="sliderTeam" class="text-sm font-semibold tracking-tight text-white/80">Team Size / Employees Affected</label>
+                                <span class="text-base font-bold text-glow font-mono" id="valTeam">10 people</span>
+                            </div>
+                            <input type="range" id="sliderTeam" min="1" max="100" value="10" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-glow" style="outline: none;">
+                            <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>1 person</span><span>100 people</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Calculations Panel -->
+                <div class="lg:col-span-5 rounded-2xl p-8 relative overflow-hidden reveal reveal-delay-2" style="border: 1px solid rgba(59,130,246,0.2); background: rgba(59,130,246,0.03);">
+                    <div class="absolute top-0 right-0 w-32 h-32 rounded-full" style="background: radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%); filter: blur(25px);"></div>
+                    <div class="relative space-y-6">
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Time Recaptured</h3>
+                            <div class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-mono" id="calcHours">0 hrs / mo</div>
+                            <p class="text-xs text-white/30 mt-1">Equivalent to reclaiming hours of manual workflows.</p>
+                        </div>
+                        <div class="h-px bg-white/10"></div>
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Estimated Savings</h3>
+                            <div class="text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple font-mono" id="calcSavings">$0 / mo</div>
+                            <p class="text-xs text-white/30 mt-1">Direct labor cost savings redirected to high-value tasks.</p>
+                        </div>
+                        <div class="h-px bg-white/10"></div>
+                        <div>
+                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Projected Annual Savings</h3>
+                            <div class="text-3xl font-bold text-green-400 font-mono" id="calcYearly">$0 / yr</div>
+                        </div>
+                        <div class="pt-4">
+                            <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary w-full justify-center text-sm py-3">
+                                <span>Claim Your Savings</span>
+                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ WHY WORK WITH ME ============ -->
+    <section id="why-me" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Differentiator</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    Why Work <span class="gradient-text">With Me</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="vs-bad rounded-2xl p-8 lg:p-10 reveal reveal-delay-1" style="border: 1px solid rgba(239,68,68,0.15); background: rgba(239,68,68,0.02);">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center"><iconify-icon icon="lucide:x" width="18" class="text-red-400"></iconify-icon></div>
+                        <h3 class="text-lg font-semibold text-white/60">Traditional Consultant</h3>
+                    </div>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:minus" width="16" class="text-red-400/50 mt-0.5 shrink-0"></iconify-icon><span class="text-white/40 text-[15px]">Gives generic advice based on frameworks</span></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:minus" width="16" class="text-red-400/50 mt-0.5 shrink-0"></iconify-icon><span class="text-white/40 text-[15px]">Creates presentations and slide decks</span></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:minus" width="16" class="text-red-400/50 mt-0.5 shrink-0"></iconify-icon><span class="text-white/40 text-[15px]">Hands over documents and disengages</span></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:minus" width="16" class="text-red-400/50 mt-0.5 shrink-0"></iconify-icon><span class="text-white/40 text-[15px]">Limited understanding of implementation</span></div>
+                    </div>
+                </div>
+                <div class="vs-good rounded-2xl p-8 lg:p-10 relative overflow-hidden reveal reveal-delay-2" style="border: 1px solid rgba(59,130,246,0.2); background: rgba(59,130,246,0.03);">
+                    <div class="absolute top-0 right-0 w-40 h-40 rounded-full" style="background: radial-gradient(circle, rgba(59,130,246,0.1), transparent 70%); filter: blur(30px);"></div>
+                    <div class="relative">
+                        <div class="flex items-center gap-3 mb-8">
+                            <div class="w-10 h-10 rounded-xl bg-accent-blue/20 flex items-center justify-center"><iconify-icon icon="lucide:check" width="18" class="text-accent-blue"></iconify-icon></div>
+                            <h3 class="text-lg font-semibold">Sarveshwar Mandal</h3>
+                        </div>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-3"><iconify-icon icon="lucide:check-circle" width="16" class="text-accent-blue mt-0.5 shrink-0"></iconify-icon><span class="text-white/80 text-[15px]">Understands both technology and business deeply</span></div>
+                            <div class="flex items-start gap-3"><iconify-icon icon="lucide:check-circle" width="16" class="text-accent-blue mt-0.5 shrink-0"></iconify-icon><span class="text-white/80 text-[15px]">Focuses on measurable outcomes and ROI</span></div>
+                            <div class="flex items-start gap-3"><iconify-icon icon="lucide:check-circle" width="16" class="text-accent-blue mt-0.5 shrink-0"></iconify-icon><span class="text-white/80 text-[15px]">Designs systems that can actually be deployed</span></div>
+                            <div class="flex items-start gap-3"><iconify-icon icon="lucide:check-circle" width="16" class="text-accent-blue mt-0.5 shrink-0"></iconify-icon><span class="text-white/80 text-[15px]">Helps execute, not just advise — hands-on approach</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ CASE STUDIES ============ -->
+    <section id="case-studies" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Proven Results</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">Client <span class="gradient-text">Outcomes</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="case-card gradient-border p-8 reveal reveal-delay-1">
+                    <div class="w-10 h-10 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-6"><iconify-icon icon="lucide:users" width="20" class="text-accent-blue"></iconify-icon></div>
+                    <h3 class="text-lg font-semibold tracking-tight mb-4">AI Lead Qualification System</h3>
+                    <div class="space-y-4 mb-6">
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Manual lead processing was consuming significant sales team bandwidth with slow response times.</p></div>
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Built an AI-powered workflow that automatically scores, qualifies, and routes incoming leads.</p></div>
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">70% reduction in manual lead processing time, boosting conversion rates significantly.</p></div>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                        <span class="text-xs text-accent-blue font-medium">AI &amp; Automation</span>
+                        <button onclick="openArchModal('leadGen')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
+                            <span>View Architecture</span>
+                            <iconify-icon icon="lucide:network" width="12"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="case-card gradient-border p-8 reveal reveal-delay-2">
+                    <div class="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-6"><iconify-icon icon="lucide:layout-dashboard" width="20" class="text-accent-purple"></iconify-icon></div>
+                    <h3 class="text-lg font-semibold tracking-tight mb-4">Business Intelligence Platform</h3>
+                    <div class="space-y-4 mb-6">
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Scattered data across multiple systems made it impossible to get a unified business view.</p></div>
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Designed a centralized analytics platform with automated data pipelines and interactive dashboards.</p></div>
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">3× faster decision-making with real-time insights, replacing 5+ disconnected tools.</p></div>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                        <span class="text-xs text-accent-purple font-medium">Data Science &amp; BI</span>
+                        <button onclick="openArchModal('biPlatform')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
+                            <span>View Architecture</span>
+                            <iconify-icon icon="lucide:network" width="12"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="case-card gradient-border p-8 reveal reveal-delay-3">
+                    <div class="w-10 h-10 rounded-xl bg-glow/10 flex items-center justify-center mb-6"><iconify-icon icon="lucide:search" width="20" class="text-glow"></iconify-icon></div>
+                    <h3 class="text-lg font-semibold tracking-tight mb-4">AI Knowledge Assistant</h3>
+                    <div class="space-y-4 mb-6">
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Information discovery across large document repositories was slow and dependent on key personnel.</p></div>
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Developed a semantic search system powered by embeddings and retrieval-augmented generation.</p></div>
+                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">60% improvement in information retrieval speed, cutting research time from hours to minutes.</p></div>
+                    </div>
+                    <div class="pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                        <span class="text-xs text-glow font-medium">AI Product Development</span>
+                        <button onclick="openArchModal('knowledgeAsst')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
+                            <span>View Architecture</span>
+                            <iconify-icon icon="lucide:network" width="12"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section id="testimonials" class="py-20 lg:py-32 relative">
+        <div class="parallax-layer absolute top-0 right-0 w-[500px] h-[500px] rounded-full" data-speed="0.015" style="background: radial-gradient(circle, rgba(59,130,246,0.05) 0%, transparent 60%); filter: blur(80px);"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Testimonials</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    What Clients <span class="gradient-text">Say</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card gradient-border p-8 reveal reveal-delay-1">
+                    <div class="testimonial-stars mb-5">
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-[15px] leading-relaxed mb-8">"Sarveshwar transformed our data chaos into a streamlined analytics platform. His ability to understand both the technical and business side is exceptional. Delivery was ahead of schedule."</p>
+                    <div class="flex items-center gap-3" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                        <div class="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center">
+                            <span class="text-sm font-semibold text-accent-blue">RK</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium">Rajesh K.</div>
+                            <div class="text-xs text-white/30">Founder, Tech Startup</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card gradient-border p-8 reveal reveal-delay-2">
+                    <div class="testimonial-stars mb-5">
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-[15px] leading-relaxed mb-8">"We needed someone who could actually build AI systems, not just talk about them. Sarveshwar delivered an automation pipeline that saved our team 20+ hours per week. Game changer."</p>
+                    <div class="flex items-center gap-3" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                        <div class="w-10 h-10 rounded-full bg-accent-purple/20 flex items-center justify-center">
+                            <span class="text-sm font-semibold text-accent-purple">AP</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium">Anita P.</div>
+                            <div class="text-xs text-white/30">COO, Enterprise SaaS</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card gradient-border p-8 reveal reveal-delay-3">
+                    <div class="testimonial-stars mb-5">
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                    </div>
+                    <p class="text-white/60 text-[15px] leading-relaxed mb-8">"His strategic approach to AI adoption helped us avoid costly mistakes. Instead of chasing trends, he identified high-impact opportunities that delivered real ROI within weeks."</p>
+                    <div class="flex items-center gap-3" style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                        <div class="w-10 h-10 rounded-full bg-glow/20 flex items-center justify-center">
+                            <span class="text-sm font-semibold text-glow">VS</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-medium">Vikram S.</div>
+                            <div class="text-xs text-white/30">VP Engineering, FinTech</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>How It Works</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">From Idea to <span class="gradient-text">Execution</span></h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="relative reveal reveal-delay-1"><div class="gradient-border p-6 h-full"><div class="text-xs text-accent-blue font-semibold uppercase tracking-widest mb-4">01</div><div class="w-10 h-10 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-4"><iconify-icon icon="lucide:search" width="20" class="text-accent-blue"></iconify-icon></div><h3 class="text-base font-semibold tracking-tight mb-2">Discovery</h3><p class="text-sm text-white/50 leading-relaxed">Understand your business goals, challenges, and current technology landscape.</p></div><div class="hidden lg:block absolute top-1/2 -right-3 z-10"><iconify-icon icon="lucide:chevron-right" width="16" class="text-white/20"></iconify-icon></div></div>
+                <div class="relative reveal reveal-delay-2"><div class="gradient-border p-6 h-full"><div class="text-xs text-accent-purple font-semibold uppercase tracking-widest mb-4">02</div><div class="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-4"><iconify-icon icon="lucide:map" width="20" class="text-accent-purple"></iconify-icon></div><h3 class="text-base font-semibold tracking-tight mb-2">Strategy</h3><p class="text-sm text-white/50 leading-relaxed">Design a clear roadmap with priorities, timelines, and expected outcomes.</p></div><div class="hidden lg:block absolute top-1/2 -right-3 z-10"><iconify-icon icon="lucide:chevron-right" width="16" class="text-white/20"></iconify-icon></div></div>
+                <div class="relative reveal reveal-delay-3"><div class="gradient-border p-6 h-full"><div class="text-xs text-glow font-semibold uppercase tracking-widest mb-4">03</div><div class="w-10 h-10 rounded-xl bg-glow/10 flex items-center justify-center mb-4"><iconify-icon icon="lucide:code" width="20" class="text-glow"></iconify-icon></div><h3 class="text-base font-semibold tracking-tight mb-2">Build</h3><p class="text-sm text-white/50 leading-relaxed">Develop the solution with iterative feedback loops and regular checkpoints.</p></div><div class="hidden lg:block absolute top-1/2 -right-3 z-10"><iconify-icon icon="lucide:chevron-right" width="16" class="text-white/20"></iconify-icon></div></div>
+                <div class="relative reveal reveal-delay-4"><div class="gradient-border p-6 h-full"><div class="text-xs text-green-400 font-semibold uppercase tracking-widest mb-4">04</div><div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mb-4"><iconify-icon icon="lucide:rocket" width="20" class="text-green-400"></iconify-icon></div><h3 class="text-base font-semibold tracking-tight mb-2">Deploy</h3><p class="text-sm text-white/50 leading-relaxed">Production deployment with monitoring, testing, and knowledge transfer.</p></div><div class="hidden lg:block absolute top-1/2 -right-3 z-10"><iconify-icon icon="lucide:chevron-right" width="16" class="text-white/20"></iconify-icon></div></div>
+                <div class="reveal reveal-delay-5"><div class="gradient-border p-6 h-full"><div class="text-xs text-yellow-400 font-semibold uppercase tracking-widest mb-4">05</div><div class="w-10 h-10 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-4"><iconify-icon icon="lucide:trending-up" width="20" class="text-yellow-400"></iconify-icon></div><h3 class="text-base font-semibold tracking-tight mb-2">Optimize</h3><p class="text-sm text-white/50 leading-relaxed">Continuous improvement based on real-world performance and feedback.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="py-20 lg:py-32 relative">
+        <div class="parallax-layer absolute top-1/2 left-0 w-[500px] h-[500px] rounded-full" data-speed="0.02" style="background: radial-gradient(circle, rgba(124,58,237,0.05) 0%, transparent 60%); filter: blur(80px); transform: translateY(-50%);"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="badge badge-glow mb-6 inline-flex reveal"><span class="dot"></span>About</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95] mb-10 reveal reveal-delay-1">Technology. Intelligence.<br><span class="gradient-text">Execution.</span></h2>
+                <div class="space-y-6 text-white/60 text-lg leading-relaxed reveal reveal-delay-2">
+                    <p>My career has been built around solving complex problems through technology.</p>
+                    <p>Over the years I have worked across Artificial Intelligence, Data Science, Software Engineering, Product Development, and Technology Leadership — in both enterprise environments and startup ecosystems.</p>
+                    <p>I enjoy helping businesses identify opportunities, build intelligent systems, and turn ambitious ideas into practical solutions.</p>
+                </div>
+                <div class="mt-10 p-6 rounded-2xl glass inline-block reveal reveal-delay-3" style="border: 1px solid rgba(255,255,255,0.08);">
+                    <p class="text-white/90 text-lg font-medium">"Technology should create measurable value."</p>
+                    <p class="text-white/40 text-sm mt-2">I focus on building systems that improve efficiency, enhance decision making, and help organizations grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section id="capabilities" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Technical Depth</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">Capability <span class="gradient-text">Matrix</span></h2>
+            </div>
+            <div class="gradient-border p-1 reveal">
+                <div class="rounded-[18px] p-6 lg:p-8" style="background: #0A0F1F;">
+                    <div class="flex items-center justify-between mb-6 pb-4" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <div class="flex items-center gap-3"><div class="flex gap-1.5"><div class="w-3 h-3 rounded-full bg-red-500/60"></div><div class="w-3 h-3 rounded-full bg-yellow-500/60"></div><div class="w-3 h-3 rounded-full bg-green-500/60"></div></div><span class="text-xs text-white/30 font-mono ml-2">capabilities.matrix</span></div>
+                        <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div><span class="text-xs text-white/30">Active</span></div>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Python, PyTorch, Hugging Face, OpenAI API" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Artificial Intelligence</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Scikit-Learn, XGBoost, Pandas, NumPy" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Machine Learning</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="GPT-4, Claude 3, Llama 3, Prompting" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Generative AI</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="CrewAI, LangGraph, AutoGen, Semantic Kernel" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Multi-Agent Systems</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="OpenCV, YOLO, Roboflow, Segment Anything" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Computer Vision</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Jupyter, Tableau, SQL, R, Stats Modeling" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Data Science</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Time Series forecasting, Prophet, ARIMA" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Predictive Analytics</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Docker, FastAPI, PostgreSQL, Git, CI/CD" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Software Engineering</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Market fit, AI roadmaps, technical discovery" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Product Strategy</span></div>
+                        <div class="cap-item rounded-xl p-4 text-center cursor-default" data-tech="Architecture design, MLOps orchestration" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);"><div class="cap-dot w-2 h-2 rounded-full bg-white/20 mx-auto mb-3 transition-all"></div><span class="text-xs text-white/60 font-medium">Technology Leadership</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ INSIGHTS ============ -->
+    <section id="insights" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14 reveal">
+                <div>
+                    <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Insights</div>
+                    <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">Thinking <span class="gradient-text">Aloud</span></h2>
+                </div>
+                <a href="https://www.linkedin.com/in/sarveshwarm/" target="_blank" rel="noopener" class="nav-link flex items-center gap-2 text-sm whitespace-nowrap">View on LinkedIn<iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon></a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="article-card gradient-border p-8 block reveal reveal-delay-1"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-accent-blue font-medium">AI</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">8 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">AI Agents Beyond Chatbots: Building Systems That Actually Do Work</h3><p class="text-sm text-white/40 leading-relaxed">Why the next wave of AI isn't about conversation — it's about autonomous action, multi-step reasoning, and real task completion.</p></div>
+                <div class="article-card gradient-border p-8 block reveal reveal-delay-2"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-accent-purple font-medium">Product</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">6 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">Building Practical AI Products: Lessons from the Trenches</h3><p class="text-sm text-white/40 leading-relaxed">The gap between an AI demo and a production product is vast. Here's what most teams miss during the transition.</p></div>
+                <div class="article-card gradient-border p-8 block reveal reveal-delay-3"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-glow font-medium">Leadership</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">10 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">Lessons from Startup Technology Leadership</h3><p class="text-sm text-white/40 leading-relaxed">What I've learned about building technology teams, making architecture decisions under uncertainty, and shipping fast.</p></div>
+                <div class="article-card gradient-border p-8 block reveal reveal-delay-4"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-green-400 font-medium">Data Science</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">7 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">Data Science Lessons from Real Projects</h3><p class="text-sm text-white/40 leading-relaxed">The messy reality of data science work that textbooks don't cover — from data quality to stakeholder alignment.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ CONTACT — ANIMATED ============ -->
+    <section id="contact" class="py-20 lg:py-32 relative overflow-hidden">
+        <div class="contact-glow-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="badge badge-glow mb-6 inline-flex reveal"><span class="dot"></span>Let's Talk</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95] mb-6 reveal reveal-delay-1">
+                    Let's Build Something<br><span class="gradient-text">Meaningful</span>
+                </h2>
+                <p class="text-lg text-white/50 leading-relaxed mb-10 max-w-xl mx-auto reveal reveal-delay-2">
+                    Whether you're exploring AI, scaling a product, or looking to automate operations, let's discuss how intelligent systems can create measurable value for your business.
+                </p>
+
+                <!-- AI Readiness Quiz Card -->
+                <div class="glass max-w-xl mx-auto rounded-3xl p-6 sm:p-8 mb-12 border border-white/5 relative overflow-hidden reveal reveal-delay-3" id="quizContainer">
+                    <!-- Step 1 -->
+                    <div class="quiz-step flex flex-col gap-5 text-left active" id="qStep1">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[10px] font-mono tracking-widest text-accent-blue uppercase">Step 1 of 3</span>
+                            <span class="text-[10px] font-mono text-white/40">Data Assets</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white leading-snug">Where is most of your business data stored?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="selectOption(1, 'spreadsheets')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-blue/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Spreadsheets &amp; Local Files</span>
+                                <iconify-icon icon="lucide:file-spreadsheet" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(1, 'databases')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-blue/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Databases / Data Warehouses</span>
+                                <iconify-icon icon="lucide:database" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(1, 'unstructured')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-blue/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Unstructured (PDFs, Chats)</span>
+                                <iconify-icon icon="lucide:file-text" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(1, 'scattered')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-blue/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Scattered / None</span>
+                                <iconify-icon icon="lucide:alert-circle" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="quiz-step flex flex-col gap-5 text-left hidden" id="qStep2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[10px] font-mono tracking-widest text-accent-purple uppercase">Step 2 of 3</span>
+                            <span class="text-[10px] font-mono text-white/40">Bottlenecks</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white leading-snug">What is your primary operational bottleneck?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="selectOption(2, 'dataentry')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-purple/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Manual Data Entry &amp; Sorting</span>
+                                <iconify-icon icon="lucide:pencil" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(2, 'reports')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-purple/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Slow Reporting / Insights</span>
+                                <iconify-icon icon="lucide:bar-chart" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(2, 'support')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-purple/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Customer Support Overload</span>
+                                <iconify-icon icon="lucide:message-square" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(2, 'mvp')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-accent-purple/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Building Core AI Features</span>
+                                <iconify-icon icon="lucide:rocket" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="quiz-step flex flex-col gap-5 text-left hidden" id="qStep3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[10px] font-mono tracking-widest text-glow uppercase">Step 3 of 3</span>
+                            <span class="text-[10px] font-mono text-white/40">Timeline</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white leading-snug">When do you plan to deploy AI solutions?</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button onclick="selectOption(3, 'immediate')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-glow/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Immediately (&lt; 1 month)</span>
+                                <iconify-icon icon="lucide:clock" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(3, 'short')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-glow/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">1-3 Months</span>
+                                <iconify-icon icon="lucide:calendar-range" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(3, 'medium')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-glow/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">3-6 Months</span>
+                                <iconify-icon icon="lucide:calendar-days" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                            <button onclick="selectOption(3, 'explore')" class="quiz-opt rounded-xl p-4 text-left border border-white/5 flex items-center justify-between hover:border-glow/30 hover:bg-white/3 transition-all">
+                                <span class="text-xs text-white/70 font-medium">Just exploring potential</span>
+                                <iconify-icon icon="lucide:compass" width="16" class="text-white/30"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result Screen -->
+                    <div class="quiz-step flex flex-col gap-6 text-center hidden" id="qResult">
+                        <div class="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto text-green-400 border border-green-500/20">
+                            <iconify-icon icon="lucide:shield-check" width="32"></iconify-icon>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-mono tracking-widest text-green-400 uppercase">Assessment Complete</span>
+                            <h3 class="text-xl font-bold text-white mt-1">AI Automation Potential: <span class="text-green-400" id="quizScoreText">HIGH</span></h3>
+                            <p class="text-xs sm:text-sm text-white/60 mt-3 max-w-md mx-auto" id="quizFeedback">
+                                Based on your inputs, your business is a prime candidate for AI agents and custom automation workflows.
+                            </p>
+                        </div>
+                        <div class="flex justify-center gap-3">
+                            <button onclick="resetQuiz()" class="text-xs text-white/40 hover:text-white transition-colors">Retake assessment</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center reveal reveal-delay-3">
+                    <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary cta-shimmer text-base py-4 px-10">
+                        <span>Schedule Strategy Call</span>
+                        <iconify-icon icon="lucide:arrow-right" width="18"></iconify-icon>
+                    </a>
+                    <a href="mailto:hello@sarveshwarmandal.com" class="cta-secondary text-base py-4 px-10">
+                        <iconify-icon icon="lucide:mail" width="18"></iconify-icon>
+                        <span>Send Email</span>
+                    </a>
+                </div>
+                <div class="mt-14 flex flex-wrap justify-center gap-6 sm:gap-8 reveal reveal-delay-4">
+                    <div class="flex items-center gap-2 text-sm text-white/40"><iconify-icon icon="lucide:clock" width="16" class="text-white/20"></iconify-icon>30-minute discovery call</div>
+                    <div class="flex items-center gap-2 text-sm text-white/40"><iconify-icon icon="lucide:video" width="16" class="text-white/20"></iconify-icon>Video conferencing</div>
+                    <div class="flex items-center gap-2 text-sm text-white/40"><iconify-icon icon="lucide:shield-check" width="16" class="text-white/20"></iconify-icon>No obligation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer style="border-top: 1px solid rgba(255,255,255,0.05);" class="py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+                <div class="lg:col-span-5">
+                    <div class="logo-glass inline-flex items-center gap-3 mb-6"><span class="logo-sm">SM</span></div>
+                    <h3 class="text-xl font-semibold tracking-tight mb-3">Sarveshwar Mandal</h3>
+                    <p class="text-sm text-white/30 mb-1">AI · Data Science · Intelligent Systems</p>
+                    <p class="text-sm text-white/40 leading-relaxed max-w-sm mt-4">Helping businesses automate workflows, unlock insights from data, and build intelligent products.</p>
+                </div>
+                <div class="lg:col-span-3">
+                    <h4 class="text-xs uppercase tracking-widest text-white/30 font-medium mb-4">Navigate</h4>
+                    <div class="space-y-3">
+                        <a href="#services" class="block text-sm text-white/50 hover:text-white transition-colors">Services</a>
+                        <a href="#case-studies" class="block text-sm text-white/50 hover:text-white transition-colors">Case Studies</a>
+                        <a href="#testimonials" class="block text-sm text-white/50 hover:text-white transition-colors">Testimonials</a>
+                        <a href="#process" class="block text-sm text-white/50 hover:text-white transition-colors">Process</a>
+                        <a href="#about" class="block text-sm text-white/50 hover:text-white transition-colors">About</a>
+                        <a href="#capabilities" class="block text-sm text-white/50 hover:text-white transition-colors">Capabilities</a>
+                        <a href="#insights" class="block text-sm text-white/50 hover:text-white transition-colors">Insights</a>
+                    </div>
+                </div>
+                <div class="lg:col-span-4">
+                    <h4 class="text-xs uppercase tracking-widest text-white/30 font-medium mb-4">Connect</h4>
+                    <div class="space-y-3 mb-6">
+                        <a href="https://www.linkedin.com/in/sarveshwarm/" target="_blank" rel="noopener" class="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors"><iconify-icon icon="lucide:linkedin" width="16"></iconify-icon>LinkedIn — sarveshwarm</a>
+                        <a href="https://github.com/sarveshwarmandal" target="_blank" rel="noopener" class="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors"><iconify-icon icon="lucide:github" width="16"></iconify-icon>GitHub</a>
+                        <a href="mailto:hello@sarveshwarmandal.com" class="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors"><iconify-icon icon="lucide:mail" width="16"></iconify-icon>hello@sarveshwarmandal.com</a>
+                        <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors"><iconify-icon icon="lucide:calendar" width="16"></iconify-icon>Book a Call</a>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-white/30"><iconify-icon icon="lucide:map-pin" width="14"></iconify-icon>India</div>
+                </div>
+            </div>
+            <div class="mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                <p class="text-xs text-white/20">© 2026 Sarveshwar Mandal. All rights reserved.</p>
+                <p class="text-xs text-white/20">Built with precision.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ ARCHITECTURE VISUALIZER MODAL ============ -->
+    <div id="archModal" class="fixed inset-0 z-50 flex items-center justify-center bg-dark/80 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300">
+        <div class="max-w-2xl w-full mx-4 glass rounded-3xl p-6 sm:p-8 relative border border-white/10 shadow-2xl flex flex-col gap-6">
+            <button onclick="closeArchModal()" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl glass hover:border-white/20 transition-all" aria-label="Close modal">
+                <iconify-icon icon="lucide:x" width="20" class="text-white"></iconify-icon>
+            </button>
+            <div>
+                <span class="text-xs font-mono text-accent-blue uppercase tracking-widest" id="modalSub">System Design</span>
+                <h3 class="text-2xl font-bold mt-1" id="modalTitle">Architecture Visualizer</h3>
+                <p class="text-xs sm:text-sm text-white/50 mt-2" id="modalDesc">System design schema showing the data pipelines and logic paths.</p>
+            </div>
+            
+            <!-- SVG Schema Container -->
+            <div class="h-60 sm:h-72 glass-strong rounded-2xl flex items-center justify-center p-4 border border-white/5 relative overflow-hidden" id="modalSchemaContainer">
+                <!-- SVG elements will be injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Tooltip for Matrix -->
+    <div id="matrixTooltip" class="fixed pointer-events-none opacity-0 z-50 glass-strong rounded-xl px-3.5 py-2.5 text-xs text-white/80 border border-white/10 shadow-xl transition-opacity duration-200 flex flex-col gap-1">
+        <span class="text-[9px] uppercase tracking-widest text-accent-blue font-semibold">Core Stack</span>
+        <span id="tooltipContent" class="font-medium font-mono text-[10.5px]"></span>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script>
+        // ===== PRELOADER =====
+        function dismissPreloader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader && !preloader.classList.contains('done')) {
+                preloader.classList.add('done');
+            }
+        }
+        // Dismiss after page fully loads (all resources)
+        window.addEventListener('load', () => {
+            setTimeout(dismissPreloader, 1600);
+        });
+        // Hard fallback: always dismiss after 3.5s no matter what
+        setTimeout(dismissPreloader, 3500);
+
+        // ===== TYPING EFFECT =====
+        const typedEl = document.getElementById('typedHero');
+        const phrases = [
+            'That Automate Workflows',
+            'That Unlock Insights',
+            'That Build Products',
+            'That Create Real'
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            if (!typedEl) return;
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typedEl.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedEl.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 60 + Math.random() * 40;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                if (phraseIndex === phrases.length - 1) {
+                    setTimeout(() => {
+                        typedEl.classList.add('done');
+                    }, 500);
+                    return;
+                }
+                typeSpeed = 1500; // Pause at full phrase
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex++;
+                typeSpeed = 300; // Pause before next typing starts
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+        // Start typing after preloader
+        setTimeout(typeEffect, 1800);
+
+        // ===== SCROLL REVEAL =====
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // ===== METRIC COUNTER =====
+        const metricObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    let current = 0;
+                    const increment = target / 40;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) { current = target; clearInterval(timer); }
+                        el.textContent = Math.floor(current) + '+';
+                    }, 30);
+                    metricObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.metric-value').forEach(el => metricObserver.observe(el));
+
+        // ===== STICKY CTA =====
+        const stickyCta = document.getElementById('stickyCta');
+        let stickyShown = false;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600 && !stickyShown) { stickyCta.classList.add('visible'); stickyShown = true; }
+            else if (window.scrollY <= 400 && stickyShown) { stickyCta.classList.remove('visible'); stickyShown = false; }
+        }, { passive: true });
+
+        // ===== MOBILE MENU =====
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenuBtn = document.getElementById('closeMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        function openMenu() { mobileMenu.classList.add('open'); mobileMenu.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+        function closeMenu() { mobileMenu.classList.remove('open'); mobileMenu.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+        menuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+        // ===== PARALLAX =====
+        const parallaxLayers = document.querySelectorAll('.parallax-layer');
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            parallaxLayers.forEach(layer => {
+                const speed = parseFloat(layer.dataset.speed) || 0.02;
+                layer.style.transform = `translateY(${scrollY * speed * -60}px)`;
+            });
+        }, { passive: true });
+
+        // ===== FLOATING CARDS TILT =====
+        document.querySelectorAll('.float-card-inner').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const xc = rect.width / 2;
+                const yc = rect.height / 2;
+                const dx = x - xc;
+                const dy = y - yc;
+                const tiltX = -(dy / yc) * 12;
+                const tiltY = (dx / xc) * 12;
+                card.style.transform = `perspective(300px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.04, 1.04, 1.04)`;
+            });
+            card.style.transformStyle = 'preserve-3d';
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(300px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
+
+        // ===== NEURAL CANVAS =====
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animFrame;
+        let canvasVisible = true;
+        let mouse = { x: null, y: null, active: false };
+
+        const canvasContainer = canvas.parentElement;
+        canvasContainer.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            mouse.active = true;
+        });
+        canvasContainer.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+            mouse.active = false;
+        });
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
+        }
+        function createParticles() {
+            particles = [];
+            const count = Math.floor((canvas.width * canvas.height) / 8000);
+            for (let i = 0; i < Math.min(count, 30); i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    size: Math.random() * 2 + 1,
+                    opacity: Math.random() * 0.5 + 0.1
+                });
+            }
+        }
+        function drawParticles() {
+            if (!canvasVisible) { animFrame = null; return; }
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Move and draw particles
+            for (let p of particles) {
+                p.x += p.vx; p.y += p.vy;
+                
+                // Mouse interaction (gentle attraction)
+                if (mouse.active) {
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 140) {
+                        const force = (140 - dist) / 1400;
+                        p.x += (dx / dist) * force * 1.5;
+                        p.y += (dy / dist) * force * 1.5;
+                    }
+                }
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(99, 160, 255, ${p.opacity})`;
+                ctx.fill();
+            }
+
+            // Draw particle-to-particle connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 80) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(99, 160, 255, ${0.15 * (1 - dist / 80)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            // Draw particle-to-mouse connections
+            if (mouse.active) {
+                for (let p of particles) {
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 90) {
+                        ctx.beginPath();
+                        ctx.moveTo(mouse.x, mouse.y);
+                        ctx.lineTo(p.x, p.y);
+                        ctx.strokeStyle = `rgba(99, 160, 255, ${0.35 * (1 - dist / 90)})`;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+            animFrame = requestAnimationFrame(drawParticles);
+        }
+        const canvasObserver = new IntersectionObserver((entries) => {
+            canvasVisible = entries[0].isIntersecting;
+            if (canvasVisible && !animFrame) drawParticles();
+        }, { threshold: 0 });
+        resizeCanvas(); createParticles(); drawParticles(); canvasObserver.observe(canvas);
+        window.addEventListener('resize', () => { resizeCanvas(); createParticles(); });
+
+        // ===== FUTURISTIC HUD MONITOR SCRIPT =====
+        const sparkPoints = [35, 28, 40, 20, 15, 10];
+        function updateSparkline() {
+            const nextY = 8 + Math.random() * 22;
+            sparkPoints.shift();
+            sparkPoints.push(nextY);
+            
+            const lineEl = document.getElementById('sparklineLine');
+            const bgEl = document.getElementById('sparklineBg');
+            const dotEl = document.getElementById('sparklineDot');
+            if (!lineEl || !bgEl || !dotEl) return;
+            
+            let pathD = `M 0 ${sparkPoints[0]}`;
+            for (let i = 1; i < sparkPoints.length; i++) {
+                pathD += ` L ${i * 20} ${sparkPoints[i]}`;
+            }
+            lineEl.setAttribute('d', pathD);
+            
+            const fillD = `${pathD} L 100 50 L 0 50 Z`;
+            bgEl.setAttribute('d', fillD);
+            
+            dotEl.setAttribute('cx', '100');
+            dotEl.setAttribute('cy', nextY.toString());
+        }
+
+        const logLines = [
+            '[ML] epoch 42/100 | loss: 0.014',
+            '[AGENT] query intent routed -> rag',
+            '[API] call resolved in 124ms',
+            '[DATA] pipeline ingestion: 12.4k/s',
+            '[SYS] model compiled successfully',
+            '[OK] weights synchronized',
+            '[AGENT] tool: search executed',
+            '[SYS] learning rate adapted to 1e-4',
+            '[AGENT] planning next task execution',
+            '[ML] training validation pass complete',
+            '[API] response generated in 480ms'
+        ];
+        function addHudLog() {
+            const logsContainer = document.getElementById('hudLogs');
+            const hudAccuracy = document.getElementById('hudAccuracy');
+            if (!logsContainer || !hudAccuracy) return;
+            
+            const line = logLines[Math.floor(Math.random() * logLines.length)];
+            const div = document.createElement('div');
+            div.textContent = line;
+            div.style.opacity = '0';
+            div.style.transform = 'translateY(5px)';
+            div.style.transition = 'all 0.3s ease';
+            
+            logsContainer.appendChild(div);
+            
+            setTimeout(() => {
+                div.style.opacity = '1';
+                div.style.transform = 'translateY(0)';
+            }, 50);
+            
+            while (logsContainer.children.length > 3) {
+                logsContainer.removeChild(logsContainer.firstChild);
+            }
+            
+            const acc = (99.1 + Math.random() * 0.4).toFixed(2);
+            hudAccuracy.textContent = `ACC: ${acc}%`;
+                    }
+        setInterval(addHudLog, 2500);
+    </script>
+
+    <!-- ============ ARCHITECTURE VISUALIZER MODAL ============ -->
+    <div id="archModal" class="fixed inset-0 z-50 flex items-center justify-center bg-dark/80 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-300">
+        <div class="max-w-2xl w-full mx-4 glass rounded-3xl p-6 sm:p-8 relative border border-white/10 shadow-2xl flex flex-col gap-6">
+            <button onclick="closeArchModal()" class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-xl glass hover:border-white/20 transition-all" aria-label="Close modal">
+                <iconify-icon icon="lucide:x" width="20" class="text-white"></iconify-icon>
+            </button>
+            <div>
+                <span class="text-xs font-mono text-accent-blue uppercase tracking-widest" id="modalSub">System Design</span>
+                <h3 class="text-2xl font-bold mt-1" id="modalTitle">Architecture Visualizer</h3>
+                <p class="text-xs sm:text-sm text-white/50 mt-2" id="modalDesc">System design schema showing the data pipelines and logic paths.</p>
+            </div>
+            
+            <!-- SVG Schema Container -->
+            <div class="h-60 sm:h-72 glass-strong rounded-2xl flex items-center justify-center p-4 border border-white/5 relative overflow-hidden" id="modalSchemaContainer">
+                <!-- SVG elements will be injected dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Tooltip for Matrix -->
+    <div id="matrixTooltip" class="fixed pointer-events-none opacity-0 z-50 glass-strong rounded-xl px-3.5 py-2.5 text-xs text-white/80 border border-white/10 shadow-xl transition-opacity duration-200 flex flex-col gap-1">
+        <span class="text-[9px] uppercase tracking-widest text-accent-blue font-semibold">Core Stack</span>
+        <span id="tooltipContent" class="font-medium font-mono text-[10.5px]"></span>
+    </div>
+
+    <script>
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ===== ACTIVE NAV =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav .nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        }, { passive: true });
+
+        // ===== THEME TOGGLE =====
+        const themeBtns = [document.getElementById('themeToggleBtn'), document.getElementById('themeToggleBtnMob')];
+        function toggleTheme() {
+            const isSlate = document.body.classList.toggle('theme-slate');
+            localStorage.setItem('theme', isSlate ? 'slate' : 'cyberpunk');
+        }
+        themeBtns.forEach(btn => {
+            if (btn) btn.addEventListener('click', toggleTheme);
+        });
+        if (localStorage.getItem('theme') === 'slate') {
+            document.body.classList.add('theme-slate');
+        }
+
+        // ===== ROI CALCULATOR SCRIPT =====
+        const sliderRate = document.getElementById('sliderRate');
+        const sliderHours = document.getElementById('sliderHours');
+        const sliderTeam = document.getElementById('sliderTeam');
+
+        const valRate = document.getElementById('valRate');
+        const valHours = document.getElementById('valHours');
+        const valTeam = document.getElementById('valTeam');
+
+        const calcHours = document.getElementById('calcHours');
+        const calcSavings = document.getElementById('calcSavings');
+        const calcYearly = document.getElementById('calcYearly');
+
+        function updateRoi() {
+            if (!sliderRate || !sliderHours || !sliderTeam) return;
+            const rate = parseInt(sliderRate.value);
+            const hours = parseInt(sliderHours.value);
+            const team = parseInt(sliderTeam.value);
+
+            valRate.textContent = `$${rate}/hr`;
+            valHours.textContent = `${hours} hrs`;
+            valTeam.textContent = `${team} ${team === 1 ? 'person' : 'people'}`;
+
+            const monthlyHours = Math.round(hours * team * 4.33);
+            const monthlySavings = Math.round(monthlyHours * rate);
+            const yearlySavings = monthlySavings * 12;
+
+            calcHours.textContent = `${monthlyHours.toLocaleString()} hrs / mo`;
+            calcSavings.textContent = `$${monthlySavings.toLocaleString()} / mo`;
+            calcYearly.textContent = `$${yearlySavings.toLocaleString()} / yr`;
+        }
+        if (sliderRate) {
+            sliderRate.addEventListener('input', updateRoi);
+            sliderHours.addEventListener('input', updateRoi);
+            sliderTeam.addEventListener('input', updateRoi);
+            updateRoi();
+        }
+
+        // ===== CAPABILITY MATRIX TOOLTIPS =====
+        const tooltip = document.getElementById('matrixTooltip');
+        const tooltipContent = document.getElementById('tooltipContent');
+        document.querySelectorAll('[data-tech]').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                tooltipContent.textContent = item.dataset.tech;
+                tooltip.classList.remove('opacity-0');
+            });
+            item.addEventListener('mousemove', (e) => {
+                tooltip.style.left = `${e.clientX + 15}px`;
+                tooltip.style.top = `${e.clientY + 15}px`;
+            });
+            item.addEventListener('mouseleave', () => {
+                tooltip.classList.add('opacity-0');
+            });
+        });
+
+        // ===== ARCHITECTURE VISUALIZER =====
+        const archData = {
+            leadGen: {
+                title: 'AI Lead Qualification System',
+                sub: 'Workflow & Integration Architecture',
+                desc: 'Real-time ingestion pipelines triggering score-based decision trees, filtering spam, and qualifying inbound leads automatically.',
+                svg: `<svg class="w-full h-full" viewBox="0 0 500 200">
+     <style>
+       .node-text { font-family: 'Geist Sans', sans-serif; font-size: 10px; fill: rgba(255,255,255,0.7); font-weight: 500; }
+       .title-text { font-family: 'Geist Sans', sans-serif; font-size: 11px; fill: #fff; font-weight: 600; }
+       .flow-line { fill: none; stroke: rgb(59,130,246); stroke-width: 2; stroke-dasharray: 8 4; animation: flow 20s linear infinite; }
+       @keyframes flow { to { stroke-dashoffset: -200; } }
+     </style>
+     <defs>
+       <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+         <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+       </pattern>
+     </defs>
+     <rect width="100%" height="100%" fill="url(#grid)" />
+     <path d="M 75 100 H 155" class="flow-line" />
+     <path d="M 235 100 H 315" class="flow-line" style="stroke: rgb(124,58,237);" />
+     <path d="M 395 100 H 430" class="flow-line" style="stroke: rgb(168,85,247);" />
+     <rect x="15" y="75" width="60" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+     <text x="45" y="98" text-anchor="middle" class="title-text">Webhook</text>
+     <text x="45" y="112" text-anchor="middle" class="node-text">Inbound Lead</text>
+     <rect x="155" y="75" width="80" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(124,58,237,0.3)" stroke-width="1" />
+     <text x="195" y="98" text-anchor="middle" class="title-text">Message Queue</text>
+     <text x="195" y="112" text-anchor="middle" class="node-text">RabbitMQ / Redis</text>
+     <rect x="315" y="75" width="80" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
+     <text x="355" y="98" text-anchor="middle" class="title-text">AI Scorer</text>
+     <text x="355" y="112" text-anchor="middle" class="node-text">LLM Classifier</text>
+     <rect x="430" y="75" width="55" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+     <text x="457" y="98" text-anchor="middle" class="title-text">CRM Node</text>
+     <text x="457" y="112" text-anchor="middle" class="node-text">Slack / CRM</text>
+   </svg>`
+            },
+            biPlatform: {
+                title: 'Business Intelligence Platform',
+                sub: 'ELT Pipeline & Dashboard Architecture',
+                desc: 'Consolidated extraction processes feeding a central cloud database warehouse, applying dbt analytics models, and rendering dashboard metrics.',
+                svg: `<svg class="w-full h-full" viewBox="0 0 500 200">
+     <style>
+       .node-text { font-family: 'Geist Sans', sans-serif; font-size: 10px; fill: rgba(255,255,255,0.7); font-weight: 500; }
+       .title-text { font-family: 'Geist Sans', sans-serif; font-size: 11px; fill: #fff; font-weight: 600; }
+       .flow-line { fill: none; stroke: rgb(124,58,237); stroke-width: 2; stroke-dasharray: 8 4; animation: flow 20s linear infinite; }
+       @keyframes flow { to { stroke-dashoffset: -200; } }
+     </style>
+     <defs>
+       <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+         <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+       </pattern>
+     </defs>
+     <rect width="100%" height="100%" fill="url(#grid)" />
+     <path d="M 85 100 H 155" class="flow-line" style="stroke: rgb(59,130,246);" />
+     <path d="M 235 100 H 305" class="flow-line" />
+     <path d="M 385 100 H 420" class="flow-line" style="stroke: rgb(168,85,247);" />
+     <rect x="15" y="75" width="70" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+     <text x="50" y="98" text-anchor="middle" class="title-text">Data Sources</text>
+     <text x="50" y="112" text-anchor="middle" class="node-text">SQL / APIs</text>
+     <rect x="155" y="75" width="80" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(124,58,237,0.3)" stroke-width="1" />
+     <text x="195" y="98" text-anchor="middle" class="title-text">DBT Pipeline</text>
+     <text x="195" y="112" text-anchor="middle" class="node-text">Snowflake DB</text>
+     <rect x="305" y="75" width="80" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
+     <text x="345" y="98" text-anchor="middle" class="title-text">AI Analytics</text>
+     <text x="345" y="112" text-anchor="middle" class="node-text">Forecast Engine</text>
+     <rect x="420" y="75" width="65" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+     <text x="452" y="98" text-anchor="middle" class="title-text">Dashboard</text>
+     <text x="452" y="112" text-anchor="middle" class="node-text">Metrics UI</text>
+   </svg>`
+            },
+            knowledgeAsst: {
+                title: 'AI Knowledge Assistant',
+                sub: 'Retrieval Augmented Generation (RAG) Architecture',
+                desc: 'Semantic vector indexing pipeline converting documentation repositories into neural embeddings, coupled with real-time prompt context injects.',
+                svg: `<svg class="w-full h-full" viewBox="0 0 500 200">
+     <style>
+       .node-text { font-family: 'Geist Sans', sans-serif; font-size: 10px; fill: rgba(255,255,255,0.7); font-weight: 500; }
+       .title-text { font-family: 'Geist Sans', sans-serif; font-size: 11px; fill: #fff; font-weight: 600; }
+       .flow-line { fill: none; stroke: rgb(168,85,247); stroke-width: 2; stroke-dasharray: 8 4; animation: flow 20s linear infinite; }
+       @keyframes flow { to { stroke-dashoffset: -200; } }
+     </style>
+     <defs>
+       <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+         <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+       </pattern>
+     </defs>
+     <rect width="100%" height="100%" fill="url(#grid)" />
+     <path d="M 85 100 H 155" class="flow-line" style="stroke: rgb(59,130,246);" />
+     <path d="M 235 100 H 305" class="flow-line" style="stroke: rgb(124,58,237);" />
+     <path d="M 385 100 H 420" class="flow-line" />
+     <rect x="15" y="75" width="70" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+     <text x="50" y="98" text-anchor="middle" class="title-text">Knowledge Docs</text>
+     <text x="50" y="112" text-anchor="middle" class="node-text">PDFs / Wikis</text>
+     <rect x="155" y="75" width="80" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(124,58,237,0.3)" stroke-width="1" />
+     <text x="195" y="98" text-anchor="middle" class="title-text">Embeddings</text>
+     <text x="195" y="112" text-anchor="middle" class="node-text">Vector Store</text>
+     <rect x="305" y="75" width="80" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
+     <text x="345" y="98" text-anchor="middle" class="title-text">RAG Logic</text>
+     <text x="345" y="112" text-anchor="middle" class="node-text">Context LLM</text>
+     <rect x="420" y="75" width="65" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+     <text x="452" y="98" text-anchor="middle" class="title-text">Semantic Chat</text>
+     <text x="452" y="112" text-anchor="middle" class="node-text">API Client</text>
+   </svg>`
+            }
+        };
+
+        function openArchModal(systemKey) {
+            const data = archData[systemKey];
+            if (!data) return;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalSub').textContent = data.sub;
+            document.getElementById('modalDesc').textContent = data.desc;
+            document.getElementById('modalSchemaContainer').innerHTML = data.svg;
+            
+            const modal = document.getElementById('archModal');
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeArchModal() {
+            const modal = document.getElementById('archModal');
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            document.body.style.overflow = '';
+        }
+
+        // ===== AI READINESS QUIZ =====
+        const quizAnswers = { data: '', bottleneck: '', timeline: '' };
+        function selectOption(step, option) {
+            if (step === 1) {
+                quizAnswers.data = option;
+                showQuizStep(2);
+            } else if (step === 2) {
+                quizAnswers.bottleneck = option;
+                showQuizStep(3);
+            } else if (step === 3) {
+                quizAnswers.timeline = option;
+                calculateQuizResult();
+            }
+        }
+        function showQuizStep(stepNum) {
+            document.querySelectorAll('.quiz-step').forEach(step => {
+                step.classList.replace('active', 'hidden');
+            });
+            let targetId = 'qStep1';
+            if (stepNum === 2) targetId = 'qStep2';
+            else if (stepNum === 3) targetId = 'qStep3';
+            else if (stepNum === 'result') targetId = 'qResult';
+            
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.classList.replace('hidden', 'active');
+            }
+        }
+        function calculateQuizResult() {
+            let potential = 'HIGH';
+            let feedback = 'Based on your inputs, your business is a prime candidate for AI agents and custom automation workflows. Building automated systems can immediately reclaim manual hours.';
+            
+            if (quizAnswers.data === 'scattered' && quizAnswers.bottleneck === 'dataentry') {
+                potential = 'MEDIUM';
+                feedback = 'You have significant operational bottlenecks, but unstructured or scattered data should be consolidated first. AI knowledge systems can help index this information.';
+            } else if (quizAnswers.timeline === 'explore') {
+                potential = 'EXPLORATORY';
+                feedback = 'You are currently auditing operational inefficiencies. There are clear pilot use cases for AI agents that we can explore with low risk.';
+            }
+            
+            document.getElementById('quizScoreText').textContent = potential;
+            document.getElementById('quizFeedback').textContent = feedback;
+            showQuizStep('result');
+        }
+        function resetQuiz() {
+            quizAnswers.data = '';
+            quizAnswers.bottleneck = '';
+            quizAnswers.timeline = '';
+            showQuizStep(1);
+        }
+    </script>
+</body>
+</html>
