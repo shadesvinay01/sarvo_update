@@ -58,6 +58,9 @@
     }
     </script>
 
+    <!-- CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1444,15 +1447,79 @@
 
     <div class="section-divider max-w-7xl mx-auto"></div>
 
+    <!-- ============ AI OPPORTUNITY AUDIT ============ -->
+    <section id="ai-audit" class="py-20 lg:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Free Assessment</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    AI Opportunity <span class="gradient-text">Audit</span>
+                </h2>
+                <p class="text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">Answer 3 questions to instantly generate a custom PDF report detailing exactly where AI can save you money.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto cyber-card reveal">
+                <div class="cyber-card-inner p-8 sm:p-12 text-center">
+                    <div class="cyber-glare"></div>
+                    <div class="cyber-grid"></div>
+                    <span class="cyber-acc cyber-acc-tl">+</span>
+                    <span class="cyber-acc cyber-acc-tr">SYS_AUDIT</span>
+                    <span class="cyber-acc cyber-acc-bl">// GENERATOR</span>
+                    <span class="cyber-acc cyber-acc-br">■</span>
+                    
+                    <form id="auditForm" class="relative z-10 space-y-6 text-left">
+                        <div>
+                            <label class="block text-sm font-semibold tracking-tight text-white/80 mb-2">1. What is your primary industry?</label>
+                            <select id="auditIndustry" class="w-full bg-black/40 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-accent-blue transition-colors">
+                                <option value="E-commerce / Retail">E-commerce / Retail</option>
+                                <option value="B2B SaaS / Tech">B2B SaaS / Tech</option>
+                                <option value="Healthcare / Wellness">Healthcare / Wellness</option>
+                                <option value="Finance / Real Estate">Finance / Real Estate</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold tracking-tight text-white/80 mb-2">2. What is your biggest operational bottleneck?</label>
+                            <select id="auditBottleneck" class="w-full bg-black/40 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-accent-purple transition-colors">
+                                <option value="Customer Support Volume">Customer Support Volume</option>
+                                <option value="Lead Generation & Qualification">Lead Generation & Qualification</option>
+                                <option value="Manual Data Entry & Processing">Manual Data Entry & Processing</option>
+                                <option value="Data Analysis & Reporting">Data Analysis & Reporting</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold tracking-tight text-white/80 mb-2">3. What is your monthly budget for automation?</label>
+                            <select id="auditBudget" class="w-full bg-black/40 border border-white/10 rounded-xl p-3 text-white focus:outline-none focus:border-glow transition-colors">
+                                <option value="Under $1,000 / mo">Under $1,000 / mo</option>
+                                <option value="$1,000 - $5,000 / mo">$1,000 - $5,000 / mo</option>
+                                <option value="Over $5,000 / mo">Over $5,000 / mo</option>
+                            </select>
+                        </div>
+                        
+                        <div class="pt-4 flex flex-col items-center">
+                            <button type="button" id="btnGenerateAudit" class="cta-primary w-full max-w-sm justify-center">
+                                <iconify-icon icon="lucide:file-text" width="18"></iconify-icon>
+                                <span>Generate PDF Audit Report</span>
+                            </button>
+                            <p id="auditStatus" class="text-xs text-white/50 mt-3 hidden tracking-wide">Compiling report...</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
     <!-- ============ ROI CALCULATOR ============ -->
     <section id="roi-calculator" class="py-20 lg:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
-                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Savings Estimate</div>
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Custom vs SaaS</div>
                 <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
-                    AI Automation <span class="gradient-text">ROI Calculator</span>
+                    ROI Comparison <span class="gradient-text">Dashboard</span>
                 </h2>
-                <p class="text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">Drag the sliders below to estimate the potential monthly and yearly savings you can unlock with intelligent systems.</p>
+                <p class="text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">Compare the cost of custom AI agents vs. manual labor and standard SaaS subscriptions.</p>
             </div>
             <div class="grid lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
                 <!-- Left: Sliders -->
@@ -1696,6 +1763,73 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ AGENT BLUEPRINT BUILDER ============ -->
+    <section id="agent-builder" class="py-20 lg:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Interactive Architect</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    Blueprint <span class="gradient-text">Builder</span>
+                </h2>
+                <p class="text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">Select the capabilities you need. We'll instantly calculate your agent's Estimated Impact Score.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto">
+                <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-4 reveal reveal-delay-1">
+                    <!-- Modules -->
+                    <button class="blueprint-module border border-white/10 bg-white/[0.02] rounded-xl p-5 text-center transition-all hover:bg-white/5 hover:border-accent-blue focus:outline-none" data-score="25" data-name="Lead Qualification">
+                        <iconify-icon icon="lucide:user-check" width="28" class="text-accent-blue mb-3"></iconify-icon>
+                        <h4 class="text-sm font-semibold text-white">Lead Qual</h4>
+                    </button>
+                    <button class="blueprint-module border border-white/10 bg-white/[0.02] rounded-xl p-5 text-center transition-all hover:bg-white/5 hover:border-accent-purple focus:outline-none" data-score="30" data-name="24/7 Support">
+                        <iconify-icon icon="lucide:message-square" width="28" class="text-accent-purple mb-3"></iconify-icon>
+                        <h4 class="text-sm font-semibold text-white">24/7 Support</h4>
+                    </button>
+                    <button class="blueprint-module border border-white/10 bg-white/[0.02] rounded-xl p-5 text-center transition-all hover:bg-white/5 hover:border-glow focus:outline-none" data-score="35" data-name="Data Analysis">
+                        <iconify-icon icon="lucide:bar-chart-2" width="28" class="text-glow mb-3"></iconify-icon>
+                        <h4 class="text-sm font-semibold text-white">Data Analysis</h4>
+                    </button>
+                    <button class="blueprint-module border border-white/10 bg-white/[0.02] rounded-xl p-5 text-center transition-all hover:bg-white/5 hover:border-accent-blue focus:outline-none" data-score="20" data-name="CRM Sync">
+                        <iconify-icon icon="lucide:database" width="28" class="text-accent-blue mb-3"></iconify-icon>
+                        <h4 class="text-sm font-semibold text-white">CRM Sync</h4>
+                    </button>
+                    <button class="blueprint-module border border-white/10 bg-white/[0.02] rounded-xl p-5 text-center transition-all hover:bg-white/5 hover:border-accent-purple focus:outline-none" data-score="40" data-name="Auto-Booking">
+                        <iconify-icon icon="lucide:calendar" width="28" class="text-accent-purple mb-3"></iconify-icon>
+                        <h4 class="text-sm font-semibold text-white">Auto-Booking</h4>
+                    </button>
+                    <button class="blueprint-module border border-white/10 bg-white/[0.02] rounded-xl p-5 text-center transition-all hover:bg-white/5 hover:border-glow focus:outline-none" data-score="50" data-name="Custom RAG">
+                        <iconify-icon icon="lucide:brain-circuit" width="28" class="text-glow mb-3"></iconify-icon>
+                        <h4 class="text-sm font-semibold text-white">Custom RAG</h4>
+                    </button>
+                </div>
+                
+                <div class="lg:col-span-4 cyber-card reveal reveal-delay-2">
+                    <div class="cyber-card-inner p-8 flex flex-col justify-between h-full">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">SCORE</span>
+                        <span class="cyber-acc cyber-acc-bl"></span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="relative z-10 text-center">
+                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-2">Impact Score</h3>
+                            <div class="text-[64px] font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-accent-blue to-glow leading-none mb-4" id="blueprintScore">0</div>
+                            <p class="text-xs text-white/40 mb-8" id="blueprintDesc">Select modules to build your system.</p>
+                            
+                            <a href="mailto:contact@sarveshwarmandal.com?subject=My Custom Agent Blueprint" class="cta-secondary w-full justify-center" id="btnSendBlueprint">
+                                <span>Get a Quote</span>
+                                <iconify-icon icon="lucide:send" width="16"></iconify-icon>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -2013,6 +2147,53 @@
                 <div class="article-card gradient-border p-8 block reveal reveal-delay-2"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-accent-purple font-medium">Product</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">6 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">Building Practical AI Products: Lessons from the Trenches</h3><p class="text-sm text-white/40 leading-relaxed">The gap between an AI demo and a production product is vast. Here's what most teams miss during the transition.</p></div>
                 <div class="article-card gradient-border p-8 block reveal reveal-delay-3"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-glow font-medium">Leadership</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">10 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">Lessons from Startup Technology Leadership</h3><p class="text-sm text-white/40 leading-relaxed">What I've learned about building technology teams, making architecture decisions under uncertainty, and shipping fast.</p></div>
                 <div class="article-card gradient-border p-8 block reveal reveal-delay-4"><div class="flex items-center gap-3 mb-4"><span class="text-[11px] uppercase tracking-widest text-green-400 font-medium">Data Science</span><span class="text-white/20">·</span><span class="text-[11px] text-white/30">7 min read</span></div><h3 class="text-lg font-semibold tracking-tight mb-3 text-white">Data Science Lessons from Real Projects</h3><p class="text-sm text-white/40 leading-relaxed">The messy reality of data science work that textbooks don't cover — from data quality to stakeholder alignment.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ PAID ADVISORY BOOKING ============ -->
+    <section id="booking" class="py-20 lg:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                <div class="reveal">
+                    <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Expert Advisory</div>
+                    <h2 class="text-4xl sm:text-5xl font-semibold tracking-[-0.04em] leading-[1.1] mb-6">
+                        Stop guessing.<br>Start <span class="gradient-text">building.</span>
+                    </h2>
+                    <p class="text-white/60 text-lg mb-8 leading-relaxed">Book a 60-minute Strategy Session to architect your custom AI roadmap. We will dissect your workflows, map out agent architectures, and calculate exact ROI projections.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-white/80"><iconify-icon icon="lucide:check-circle-2" class="text-green-400"></iconify-icon> Live Architecture Mapping</li>
+                        <li class="flex items-center gap-3 text-white/80"><iconify-icon icon="lucide:check-circle-2" class="text-green-400"></iconify-icon> Tech Stack Recommendations</li>
+                        <li class="flex items-center gap-3 text-white/80"><iconify-icon icon="lucide:check-circle-2" class="text-green-400"></iconify-icon> Estimated Costs & Timeline</li>
+                    </ul>
+                </div>
+                
+                <div class="cyber-card reveal reveal-delay-1">
+                    <div class="cyber-card-inner p-10 text-center">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">SESSION</span>
+                        <span class="cyber-acc cyber-acc-bl"></span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="relative z-10">
+                            <h3 class="text-xl font-bold text-white mb-2">Strategy Session</h3>
+                            <div class="flex justify-center items-end gap-1 mb-6">
+                                <span class="text-5xl font-extrabold tracking-tight text-white">$499</span>
+                                <span class="text-white/40 mb-1">/ 60 mins</span>
+                            </div>
+                            
+                            <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary w-full justify-center py-4 text-lg">
+                                <iconify-icon icon="lucide:calendar-check" width="20"></iconify-icon>
+                                <span>Book Session Now</span>
+                            </a>
+                            <p class="text-[11px] text-white/30 mt-4 uppercase tracking-widest font-mono">Secure checkout via Stripe</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -3135,6 +3316,112 @@
             document.getElementById('flowLine3').className.baseVal = "flow-svg-line";
             
             setTimeout(printNextLog, 200);
+        }
+
+        /* ===== FULL FUNNEL MONETIZATION JS ===== */
+
+        // 1. Blueprint Builder Logic
+        const blueprintModules = document.querySelectorAll('.blueprint-module');
+        const blueprintScoreDisplay = document.getElementById('blueprintScore');
+        let currentScore = 0;
+
+        blueprintModules.forEach(module => {
+            module.addEventListener('click', () => {
+                const isSelected = module.classList.toggle('blueprint-selected');
+                const score = parseInt(module.getAttribute('data-score'));
+                
+                if (isSelected) {
+                    module.classList.replace('bg-white/[0.02]', 'bg-white/10');
+                    module.classList.add('border-white', 'shadow-[0_0_15px_rgba(255,255,255,0.2)]');
+                    currentScore += score;
+                } else {
+                    module.classList.replace('bg-white/10', 'bg-white/[0.02]');
+                    module.classList.remove('border-white', 'shadow-[0_0_15px_rgba(255,255,255,0.2)]');
+                    currentScore -= score;
+                }
+                
+                if (blueprintScoreDisplay) blueprintScoreDisplay.textContent = currentScore;
+                
+                // Update button text based on selection
+                const btnSend = document.getElementById('btnSendBlueprint');
+                if (btnSend) {
+                    if (currentScore > 0) {
+                        btnSend.querySelector('span').textContent = `Get Quote (Score: ${currentScore})`;
+                        btnSend.classList.add('cta-primary');
+                        btnSend.classList.remove('cta-secondary');
+                    } else {
+                        btnSend.querySelector('span').textContent = 'Get a Quote';
+                        btnSend.classList.add('cta-secondary');
+                        btnSend.classList.remove('cta-primary');
+                    }
+                }
+            });
+        });
+
+        // 2. AI Audit PDF Generator
+        const btnGenerateAudit = document.getElementById('btnGenerateAudit');
+        if (btnGenerateAudit) {
+            btnGenerateAudit.addEventListener('click', () => {
+                const ind = document.getElementById('auditIndustry').value;
+                const bot = document.getElementById('auditBottleneck').value;
+                const bud = document.getElementById('auditBudget').value;
+                const status = document.getElementById('auditStatus');
+                
+                status.classList.remove('hidden');
+                btnGenerateAudit.classList.add('opacity-50', 'pointer-events-none');
+                
+                // Simulate processing time
+                setTimeout(() => {
+                    try {
+                        const { jsPDF } = window.jspdf;
+                        const doc = new jsPDF();
+                        
+                        doc.setFont("helvetica", "bold");
+                        doc.setFontSize(22);
+                        doc.text("AI Opportunity Audit Report", 20, 30);
+                        
+                        doc.setFont("helvetica", "normal");
+                        doc.setFontSize(12);
+                        doc.text(`Generated for: ${ind}`, 20, 45);
+                        doc.text(`Primary Bottleneck: ${bot}`, 20, 55);
+                        doc.text(`Target Budget: ${bud}`, 20, 65);
+                        
+                        doc.setLineWidth(0.5);
+                        doc.line(20, 75, 190, 75);
+                        
+                        doc.setFont("helvetica", "bold");
+                        doc.setFontSize(16);
+                        doc.text("Initial Assessment", 20, 90);
+                        
+                        doc.setFont("helvetica", "normal");
+                        doc.setFontSize(11);
+                        const analysis = `Based on your profile in ${ind}, resolving issues with ${bot.toLowerCase()} using AI could reduce manual effort by up to 40% within the first 90 days. Your budget of ${bud} is sufficient to initiate a high-ROI proof of concept.`;
+                        const splitText = doc.splitTextToSize(analysis, 170);
+                        doc.text(splitText, 20, 100);
+                        
+                        doc.setFont("helvetica", "italic");
+                        doc.text("Prepared by Sarveshwar Mandal | AI & Data Science Consultant", 20, 280);
+                        
+                        doc.save("AI-Opportunity-Audit.pdf");
+                        
+                        status.textContent = "Report downloaded successfully!";
+                        status.classList.replace('text-white/50', 'text-green-400');
+                    } catch (e) {
+                        console.error("PDF generation failed", e);
+                        status.textContent = "Error generating report. Please try again.";
+                        status.classList.replace('text-white/50', 'text-red-400');
+                    }
+                    
+                    setTimeout(() => {
+                        status.classList.add('hidden');
+                        status.textContent = "Compiling report...";
+                        status.classList.replace('text-green-400', 'text-white/50');
+                        status.classList.replace('text-red-400', 'text-white/50');
+                        btnGenerateAudit.classList.remove('opacity-50', 'pointer-events-none');
+                    }, 4000);
+                    
+                }, 1500);
+            });
         }
     </script>
 </body>
