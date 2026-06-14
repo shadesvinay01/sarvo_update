@@ -874,6 +874,138 @@
         .quiz-opt:hover {
             background: rgba(255, 255, 255, 0.06) !important;
         }
+
+        /* ===== CYBERPUNK / HIGH-TECH CARDS & CONTAINER EFFECTS ===== */
+        .cyber-card {
+            position: relative;
+            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(var(--color-accent-blue), 0.25) 0%, rgba(var(--color-accent-purple), 0.15) 50%, rgba(var(--color-glow), 0.05) 100%);
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
+            transition: transform 0.15s ease-out, background 0.3s ease, box-shadow 0.3s ease;
+            will-change: transform;
+            perspective: 1000px;
+        }
+        .cyber-card:hover {
+            background: linear-gradient(135deg, rgba(var(--color-accent-blue), 0.6) 0%, rgba(var(--color-accent-purple), 0.6) 50%, rgba(var(--color-glow), 0.4) 100%);
+            box-shadow: 0 12px 35px -15px rgba(var(--color-accent-blue), 0.35);
+        }
+        .cyber-card-inner {
+            background: rgba(5, 8, 22, 0.95);
+            height: 100%;
+            width: 100%;
+            position: relative;
+            clip-path: polygon(0 0, calc(100% - 15.5px) 0, 100% 15.5px, 100% 100%, 15.5px 100%, 0 calc(100% - 15.5px));
+            transition: background 0.3s ease;
+            overflow: hidden;
+        }
+        .theme-slate .cyber-card-inner {
+            background: rgba(15, 23, 42, 0.95);
+        }
+        .cyber-card:hover .cyber-card-inner {
+            background: rgba(5, 8, 22, 0.85);
+        }
+        .theme-slate .cyber-card:hover .cyber-card-inner {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        /* Specular Specularity Glare */
+        .cyber-glare {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(circle 240px at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.08) 0%, transparent 65%);
+            mix-blend-mode: overlay;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
+        .cyber-card:hover .cyber-glare {
+            opacity: 1;
+        }
+
+        /* Dot-Matrix Grid Background */
+        .cyber-grid {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 14px 14px;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        .theme-slate .cyber-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+        }
+
+        /* Sci-Fi Decorative Corner Crosshairs/Accents */
+        .cyber-acc {
+            position: absolute;
+            font-family: monospace;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.15);
+            pointer-events: none;
+            user-select: none;
+            z-index: 5;
+        }
+        .cyber-acc-tl { top: 6px; left: 8px; }
+        .cyber-acc-tr { top: 6px; right: 20px; }
+        .cyber-acc-bl { bottom: 6px; left: 20px; }
+        .cyber-acc-br { bottom: 6px; right: 8px; }
+
+        /* Simulated IDE Sandbox Styles */
+        .sandbox-nav-btn {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sandbox-nav-btn.active {
+            background: linear-gradient(135deg, rgba(var(--color-accent-blue), 0.1) 0%, rgba(var(--color-accent-purple), 0.15) 100%);
+            border-color: rgba(var(--color-accent-blue), 0.4);
+            color: #FFFFFF;
+        }
+        .sandbox-nav-btn.active::before {
+            content: '●';
+            color: rgb(var(--color-accent-blue));
+            margin-right: 6px;
+            font-size: 8px;
+            vertical-align: middle;
+        }
+        .node-flow {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .node-flow-active {
+            box-shadow: 0 0 15px rgba(var(--color-accent-blue), 0.4);
+            border-color: rgb(var(--color-accent-blue)) !important;
+            background: rgba(var(--color-accent-blue), 0.08) !important;
+        }
+        .node-flow-active.purple {
+            box-shadow: 0 0 15px rgba(var(--color-accent-purple), 0.4);
+            border-color: rgb(var(--color-accent-purple)) !important;
+            background: rgba(var(--color-accent-purple), 0.08) !important;
+        }
+        .node-flow-active.glow {
+            box-shadow: 0 0 15px rgba(var(--color-glow), 0.4);
+            border-color: rgb(var(--color-glow)) !important;
+            background: rgba(var(--color-glow), 0.08) !important;
+        }
+        .flow-svg-line {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.08);
+            stroke-width: 2;
+            transition: stroke 0.3s ease;
+        }
+        .flow-svg-line.active {
+            stroke: rgb(var(--color-accent-blue));
+            stroke-dasharray: 6 3;
+            animation: strokeFlow 0.8s linear infinite;
+        }
+        @keyframes strokeFlow {
+            to { stroke-dashoffset: -9; }
+        }
     </style>
 </head>
 <body class="grid-bg">
@@ -1207,60 +1339,103 @@
                 </h2>
             </div>
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-1">
-                    <div class="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-6">
-                        <iconify-icon icon="lucide:bot" width="24" class="text-accent-blue"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold tracking-tight mb-3">AI Automation</h3>
-                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Automate repetitive workflows using intelligent systems that work around the clock.</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Workflow Automation</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">AI Agents</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Knowledge Systems</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Customer Support AI</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Process Optimization</span></div>
-                    </div>
-                </div>
-                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-2">
-                    <div class="w-12 h-12 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-6">
-                        <iconify-icon icon="lucide:bar-chart-3" width="24" class="text-accent-purple"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold tracking-tight mb-3">Data Science</h3>
-                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Turn data into actionable business insights that drive better decisions.</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Predictive Analytics</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Forecasting</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">BI Dashboards</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Data Strategy</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Decision Intelligence</span></div>
+                <!-- Card 1: AI Automation -->
+                <div class="cyber-card reveal reveal-delay-1">
+                    <div class="cyber-card-inner p-8 lg:p-10">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">SYS_N01</span>
+                        <span class="cyber-acc cyber-acc-bl">// AGENT WORKFLOWS</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:bot" width="24" class="text-accent-blue"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold tracking-tight mb-3 relative z-10">AI Automation</h3>
+                        <p class="text-white/50 text-[15px] leading-relaxed mb-8 relative z-10">Automate repetitive workflows using intelligent systems that work around the clock.</p>
+                        <div class="space-y-3 relative z-10">
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Workflow Automation</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">AI Agents</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Knowledge Systems</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Customer Support AI</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-blue"></iconify-icon><span class="text-sm text-white/70">Process Optimization</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-3">
-                    <div class="w-12 h-12 rounded-xl bg-glow/10 flex items-center justify-center mb-6">
-                        <iconify-icon icon="lucide:rocket" width="24" class="text-glow"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold tracking-tight mb-3">AI Product Development</h3>
-                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Build intelligent products from idea to deployment with scalable architectures.</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">MVP Development</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">Generative AI</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">RAG Systems</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">AI Applications</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">Scalable Architectures</span></div>
+                
+                <!-- Card 2: Data Science -->
+                <div class="cyber-card reveal reveal-delay-2">
+                    <div class="cyber-card-inner p-8 lg:p-10">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">SYS_N02</span>
+                        <span class="cyber-acc cyber-acc-bl">// DECISION INTEL</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-12 h-12 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:bar-chart-3" width="24" class="text-accent-purple"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold tracking-tight mb-3 relative z-10">Data Science</h3>
+                        <p class="text-white/50 text-[15px] leading-relaxed mb-8 relative z-10">Turn data into actionable business insights that drive better decisions.</p>
+                        <div class="space-y-3 relative z-10">
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Predictive Analytics</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Forecasting</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">BI Dashboards</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Data Strategy</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-accent-purple"></iconify-icon><span class="text-sm text-white/70">Decision Intelligence</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="service-card gradient-border p-8 lg:p-10 reveal reveal-delay-4">
-                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
-                        <iconify-icon icon="lucide:compass" width="24" class="text-green-400"></iconify-icon>
+                
+                <!-- Card 3: AI Product Dev -->
+                <div class="cyber-card reveal reveal-delay-3">
+                    <div class="cyber-card-inner p-8 lg:p-10">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">SYS_N03</span>
+                        <span class="cyber-acc cyber-acc-bl">// MVP SCALE</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-12 h-12 rounded-xl bg-glow/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:rocket" width="24" class="text-glow"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold tracking-tight mb-3 relative z-10">AI Product Development</h3>
+                        <p class="text-white/50 text-[15px] leading-relaxed mb-8 relative z-10">Build intelligent products from idea to deployment with scalable architectures.</p>
+                        <div class="space-y-3 relative z-10">
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">MVP Development</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">Generative AI</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">RAG Systems</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">AI Applications</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-glow"></iconify-icon><span class="text-sm text-white/70">Scalable Architectures</span></div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold tracking-tight mb-3">Technology Advisory</h3>
-                    <p class="text-white/50 text-[15px] leading-relaxed mb-8">Strategic guidance for startups and businesses navigating technology decisions.</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Product Strategy</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Technology Roadmaps</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Architecture Reviews</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">AI Adoption</span></div>
-                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Leadership Guidance</span></div>
+                </div>
+                
+                <!-- Card 4: Advisory -->
+                <div class="cyber-card reveal reveal-delay-4">
+                    <div class="cyber-card-inner p-8 lg:p-10">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">SYS_N04</span>
+                        <span class="cyber-acc cyber-acc-bl">// STRATEGY ADVISORY</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:compass" width="24" class="text-green-400"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold tracking-tight mb-3 relative z-10">Technology Advisory</h3>
+                        <p class="text-white/50 text-[15px] leading-relaxed mb-8 relative z-10">Strategic guidance for startups and businesses navigating technology decisions.</p>
+                        <div class="space-y-3 relative z-10">
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Product Strategy</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Technology Roadmaps</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Architecture Reviews</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">AI Adoption</span></div>
+                            <div class="flex items-center gap-3"><iconify-icon icon="lucide:check" width="16" class="text-green-400"></iconify-icon><span class="text-sm text-white/70">Leadership Guidance</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1281,63 +1456,246 @@
             </div>
             <div class="grid lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
                 <!-- Left: Sliders -->
-                <div class="lg:col-span-7 gradient-border p-8 sm:p-10 reveal reveal-delay-1">
-                    <div class="space-y-8">
-                        <!-- Slider 1 -->
-                        <div>
-                            <div class="flex justify-between items-center mb-3">
-                                <label for="sliderRate" class="text-sm font-semibold tracking-tight text-white/80">Average Hourly Rate ($)</label>
-                                <span class="text-base font-bold text-accent-blue font-mono" id="valRate">$75/hr</span>
+                <div class="lg:col-span-7 cyber-card reveal reveal-delay-1">
+                    <div class="cyber-card-inner p-8 sm:p-10">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">ROI_INPUT</span>
+                        <span class="cyber-acc cyber-acc-bl">// PARAMETERS</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="space-y-8 relative z-10">
+                            <!-- Slider 1 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <label for="sliderRate" class="text-sm font-semibold tracking-tight text-white/80">Average Hourly Rate ($)</label>
+                                    <span class="text-base font-bold text-accent-blue font-mono" id="valRate">$75/hr</span>
+                                </div>
+                                <input type="range" id="sliderRate" min="30" max="250" value="75" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-blue" style="outline: none;">
+                                <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>$30</span><span>$250</span></div>
                             </div>
-                            <input type="range" id="sliderRate" min="30" max="250" value="75" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-blue" style="outline: none;">
-                            <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>$30</span><span>$250</span></div>
-                        </div>
-                        <!-- Slider 2 -->
-                        <div>
-                            <div class="flex justify-between items-center mb-3">
-                                <label for="sliderHours" class="text-sm font-semibold tracking-tight text-white/80">Manual Hours Saved / Wk per Employee</label>
-                                <span class="text-base font-bold text-accent-purple font-mono" id="valHours">15 hrs</span>
+                            <!-- Slider 2 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <label for="sliderHours" class="text-sm font-semibold tracking-tight text-white/80">Manual Hours Saved / Wk per Employee</label>
+                                    <span class="text-base font-bold text-accent-purple font-mono" id="valHours">15 hrs</span>
+                                </div>
+                                <input type="range" id="sliderHours" min="5" max="40" value="15" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-purple" style="outline: none;">
+                                <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>5 hrs</span><span>40 hrs</span></div>
                             </div>
-                            <input type="range" id="sliderHours" min="5" max="40" value="15" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-accent-purple" style="outline: none;">
-                            <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>5 hrs</span><span>40 hrs</span></div>
-                        </div>
-                        <!-- Slider 3 -->
-                        <div>
-                            <div class="flex justify-between items-center mb-3">
-                                <label for="sliderTeam" class="text-sm font-semibold tracking-tight text-white/80">Team Size / Employees Affected</label>
-                                <span class="text-base font-bold text-glow font-mono" id="valTeam">10 people</span>
+                            <!-- Slider 3 -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <label for="sliderTeam" class="text-sm font-semibold tracking-tight text-white/80">Team Size / Employees Affected</label>
+                                    <span class="text-base font-bold text-glow font-mono" id="valTeam">10 people</span>
+                                </div>
+                                <input type="range" id="sliderTeam" min="1" max="100" value="10" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-glow" style="outline: none;">
+                                <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>1 person</span><span>100 people</span></div>
                             </div>
-                            <input type="range" id="sliderTeam" min="1" max="100" value="10" class="w-full h-1.5 bg-white/10 rounded-lg appearance-none cursor-pointer accent-glow" style="outline: none;">
-                            <div class="flex justify-between text-[10px] text-white/30 font-mono mt-1"><span>1 person</span><span>100 people</span></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Calculations Panel -->
-                <div class="lg:col-span-5 rounded-2xl p-8 relative overflow-hidden reveal reveal-delay-2" style="border: 1px solid rgba(59,130,246,0.2); background: rgba(59,130,246,0.03);">
-                    <div class="absolute top-0 right-0 w-32 h-32 rounded-full" style="background: radial-gradient(circle, rgba(124,58,237,0.1), transparent 70%); filter: blur(25px);"></div>
-                    <div class="relative space-y-6">
-                        <div>
-                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Time Recaptured</h3>
-                            <div class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-mono" id="calcHours">0 hrs / mo</div>
-                            <p class="text-xs text-white/30 mt-1">Equivalent to reclaiming hours of manual workflows.</p>
+                <div class="lg:col-span-5 cyber-card reveal reveal-delay-2">
+                    <div class="cyber-card-inner p-8">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">ROI_OUTPUT</span>
+                        <span class="cyber-acc cyber-acc-bl">// ANALYTICS</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="relative space-y-6 z-10">
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Time Recaptured</h3>
+                                <div class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-mono" id="calcHours">0 hrs / mo</div>
+                                <p class="text-xs text-white/30 mt-1">Equivalent to reclaiming hours of manual workflows.</p>
+                            </div>
+                            <div class="h-px bg-white/10"></div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Estimated Savings</h3>
+                                <div class="text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple font-mono" id="calcSavings">$0 / mo</div>
+                                <p class="text-xs text-white/30 mt-1">Direct labor cost savings redirected to high-value tasks.</p>
+                            </div>
+                            <div class="h-px bg-white/10"></div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Projected Annual Savings</h3>
+                                <div class="text-3xl font-bold text-green-400 font-mono" id="calcYearly">$0 / yr</div>
+                            </div>
+                            <div class="pt-4">
+                                <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary w-full justify-center text-sm py-3 select-none">
+                                    <span>Claim Your Savings</span>
+                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                </a>
+                            </div>
                         </div>
-                        <div class="h-px bg-white/10"></div>
-                        <div>
-                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Estimated Savings</h3>
-                            <div class="text-4xl sm:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple font-mono" id="calcSavings">$0 / mo</div>
-                            <p class="text-xs text-white/30 mt-1">Direct labor cost savings redirected to high-value tasks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- ============ INTERACTIVE AGENT SANDBOX ============ -->
+    <section id="agent-sandbox" class="py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="badge badge-glow mb-6 inline-flex"><span class="dot"></span>Interactive Console</div>
+                <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">
+                    Live Agent <span class="gradient-text">Sandbox</span>
+                </h2>
+                <p class="text-white/50 mt-4 max-w-xl mx-auto text-sm sm:text-base">Configure a business agent node below and simulate a live execution cycle in our developer environment.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-12 gap-8 items-stretch max-w-6xl mx-auto">
+                <!-- Left Column: Agent Configurator -->
+                <div class="lg:col-span-5 flex flex-col justify-between">
+                    <div class="cyber-card h-full">
+                        <div class="cyber-card-inner flex flex-col justify-between">
+                            <div class="cyber-glare"></div>
+                            <div class="cyber-grid"></div>
+                            <span class="cyber-acc cyber-acc-tl">+</span>
+                            <span class="cyber-acc cyber-acc-tr">CFG_NODE</span>
+                            <span class="cyber-acc cyber-acc-bl">// TERMINAL CONFIG</span>
+                            <span class="cyber-acc cyber-acc-br">■</span>
+                            
+                            <div class="space-y-6 relative z-10 p-2">
+                                <div>
+                                    <label class="text-[10px] font-mono uppercase tracking-widest text-white/30 block mb-3">1. Select Agent Node Template</label>
+                                    <div class="space-y-2">
+                                        <button class="sandbox-nav-btn w-full text-left p-3.5 rounded-xl text-xs font-mono text-white/60 flex items-center justify-between active" id="btnLeadAgent" onclick="selectSandboxAgent('lead')">
+                                            <span>Lead Qualifying Agent</span>
+                                            <iconify-icon icon="lucide:mail" width="14"></iconify-icon>
+                                        </button>
+                                        <button class="sandbox-nav-btn w-full text-left p-3.5 rounded-xl text-xs font-mono text-white/60 flex items-center justify-between" id="btnRagAgent" onclick="selectSandboxAgent('rag')">
+                                            <span>RAG Knowledge Assistant</span>
+                                            <iconify-icon icon="lucide:book-open" width="14"></iconify-icon>
+                                        </button>
+                                        <button class="sandbox-nav-btn w-full text-left p-3.5 rounded-xl text-xs font-mono text-white/60 flex items-center justify-between" id="btnAnalystAgent" onclick="selectSandboxAgent('analyst')">
+                                            <span>Autonomous Data Analyst</span>
+                                            <iconify-icon icon="lucide:bar-chart-4" width="14"></iconify-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="h-px bg-white/5"></div>
+                                
+                                <div>
+                                    <label class="text-[10px] font-mono uppercase tracking-widest text-white/30 block mb-2">2. LLM Model Selection</label>
+                                    <div class="relative">
+                                        <select id="sandboxModel" class="w-full bg-dark/40 border border-white/10 rounded-xl px-3 py-2.5 text-xs text-white/80 font-mono focus:outline-none focus:border-accent-blue/50" style="background: #000000;">
+                                            <option value="claude">Claude 3.5 Sonnet (Optimized)</option>
+                                            <option value="gpt4">GPT-4o (Max Reasoning)</option>
+                                            <option value="llama3">Llama 3.1 (Local Node)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <label class="text-[10px] font-mono uppercase tracking-widest text-white/30">3. Temperature (Creativity)</label>
+                                        <span id="valSandboxTemp" class="text-xs font-mono text-accent-blue">0.2</span>
+                                    </div>
+                                    <input type="range" min="0" max="10" value="2" id="sliderSandboxTemp" oninput="updateSandboxTemp(this.value)" class="w-full h-1 bg-white/5 rounded-lg appearance-none cursor-pointer accent-accent-blue">
+                                </div>
+                                
+                                <div>
+                                    <label class="text-[10px] font-mono uppercase tracking-widest text-white/30 block mb-2">4. Memory Architecture</label>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <label class="flex items-center gap-2 border border-white/5 bg-white/[0.01] rounded-xl p-2.5 cursor-pointer hover:border-white/10 transition-colors">
+                                            <input type="radio" name="sandboxMemory" value="vector" checked class="accent-accent-blue">
+                                            <span class="text-[11px] font-mono text-white/60">Vector DB</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 border border-white/5 bg-white/[0.01] rounded-xl p-2.5 cursor-pointer hover:border-white/10 transition-colors">
+                                            <input type="radio" name="sandboxMemory" value="redis" class="accent-accent-blue">
+                                            <span class="text-[11px] font-mono text-white/60">Redis Cache</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6 relative z-10 p-2">
+                                <button id="btnRunSandbox" onclick="runSandboxPipeline()" class="cta-primary w-full justify-center text-sm py-3 px-6 select-none">
+                                    <span>RUN AGENT PROCESS [F5]</span>
+                                    <iconify-icon icon="lucide:play" width="16" class="animate-pulse"></iconify-icon>
+                                </button>
+                           </div>
                         </div>
-                        <div class="h-px bg-white/10"></div>
-                        <div>
-                            <h3 class="text-xs uppercase tracking-widest text-white/40 font-medium mb-1">Projected Annual Savings</h3>
-                            <div class="text-3xl font-bold text-green-400 font-mono" id="calcYearly">$0 / yr</div>
-                        </div>
-                        <div class="pt-4">
-                            <a href="https://calendly.com/sarveshwarmandal/intro-call" target="_blank" rel="noopener" class="cta-primary w-full justify-center text-sm py-3">
-                                <span>Claim Your Savings</span>
-                                <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
-                            </a>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Visualizer Terminal -->
+                <div class="lg:col-span-7 flex flex-col items-stretch justify-between">
+                    <div class="cyber-card h-full">
+                        <div class="cyber-card-inner flex flex-col justify-between" style="padding: 24px;">
+                            <div class="cyber-glare"></div>
+                            <div class="cyber-grid"></div>
+                            <span class="cyber-acc cyber-acc-tl">+</span>
+                            <span class="cyber-acc cyber-acc-tr">EXEC_MONITOR</span>
+                            <span class="cyber-acc cyber-acc-bl">// PIPELINE ACTIVE</span>
+                            <span class="cyber-acc cyber-acc-br">■</span>
+                            
+                            <div class="flex-1 flex flex-col gap-6 relative z-10 w-full">
+                                <!-- Visual Node Pipeline Diagram -->
+                                <div class="glass-strong rounded-2xl p-4 border border-white/5 flex flex-col gap-4 relative overflow-hidden" style="background: rgba(0,0,0,0.4);">
+                                    <div class="flex items-center justify-between border-b border-white/5 pb-2">
+                                        <span class="text-[9px] font-mono text-white/40 tracking-wider">VISUAL PIPELINE FLOW</span>
+                                        <span class="text-[8px] font-mono text-green-400 bg-green-400/10 px-2 py-0.5 rounded" id="sandboxStatusText">READY_</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between py-6 px-2 relative min-h-[90px]">
+                                        <!-- SVG Connector Lines -->
+                                        <svg class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 1;">
+                                            <path id="flowLine1" class="flow-svg-line" d="M 60 45 H 140" />
+                                            <path id="flowLine2" class="flow-svg-line" d="M 200 45 H 280" />
+                                            <path id="flowLine3" class="flow-svg-line" d="M 340 45 H 420" />
+                                        </svg>
+                                        
+                                        <!-- Pipeline Nodes -->
+                                        <div class="node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10" id="node1">
+                                            <iconify-icon icon="lucide:arrow-right-to-line" width="16" class="text-white/60" id="nodeIcon1"></iconify-icon>
+                                            <span class="text-[7.5px] font-mono text-white/40 uppercase" id="nodeLabel1">INBOUND</span>
+                                        </div>
+                                        
+                                        <div class="node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10" id="node2">
+                                            <iconify-icon icon="lucide:shield-check" width="16" class="text-white/60" id="nodeIcon2"></iconify-icon>
+                                            <span class="text-[7.5px] font-mono text-white/40 uppercase" id="nodeLabel2">VERIFY</span>
+                                        </div>
+                                        
+                                        <div class="node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10" id="node3">
+                                            <iconify-icon icon="lucide:cpu" width="16" class="text-white/60" id="nodeIcon3"></iconify-icon>
+                                            <span class="text-[7.5px] font-mono text-white/40 uppercase" id="nodeLabel3">LLM RUN</span>
+                                        </div>
+                                        
+                                        <div class="node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10" id="node4">
+                                            <iconify-icon icon="lucide:database" width="16" class="text-white/60" id="nodeIcon4"></iconify-icon>
+                                            <span class="text-[7.5px] font-mono text-white/40 uppercase" id="nodeLabel4">DB OUT</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Simulated Terminal Log Output -->
+                                <div class="glass-strong rounded-2xl p-4 border border-white/5 flex-1 min-h-[140px] font-mono text-[10px] text-white/60 flex flex-col justify-between" style="background: rgba(0,0,0,0.6);">
+                                    <div class="flex items-center justify-between border-b border-white/5 pb-2 mb-2">
+                                        <span class="text-[9px] text-white/40">CONSOLE OUTPUT</span>
+                                        <span class="text-[9px] text-white/30 telemetry-value" data-type="ms">32ms</span>
+                                    </div>
+                                    <div class="flex-1 overflow-y-auto space-y-1.5 h-24 scrollbar-thin" id="sandboxConsole">
+                                        <div class="text-white/30">&gt; Awaiting process initiation... Select parameters and press RUN.</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Output Result Display Card -->
+                                <div class="glass-strong rounded-2xl p-4 border border-white/5 min-h-[70px]" style="background: rgba(0,0,0,0.3);" id="sandboxResultBox">
+                                    <div class="text-[9px] font-mono text-white/40 mb-1.5 uppercase">Execution Return Value</div>
+                                    <div class="text-[11px] font-mono text-white/50 italic" id="sandboxResultContent">
+                                        Awaiting agent execution...
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1398,52 +1756,90 @@
                 <h2 class="text-4xl sm:text-5xl lg:text-[64px] font-semibold tracking-[-0.04em] leading-[0.95]">Client <span class="gradient-text">Outcomes</span></h2>
             </div>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="case-card gradient-border p-8 reveal reveal-delay-1">
-                    <div class="w-10 h-10 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-6"><iconify-icon icon="lucide:users" width="20" class="text-accent-blue"></iconify-icon></div>
-                    <h3 class="text-lg font-semibold tracking-tight mb-4">AI Lead Qualification System</h3>
-                    <div class="space-y-4 mb-6">
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Manual lead processing was consuming significant sales team bandwidth with slow response times.</p></div>
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Built an AI-powered workflow that automatically scores, qualifies, and routes incoming leads.</p></div>
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">70% reduction in manual lead processing time, boosting conversion rates significantly.</p></div>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.05);">
-                        <span class="text-xs text-accent-blue font-medium">AI &amp; Automation</span>
-                        <button onclick="openArchModal('leadGen')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
-                            <span>View Architecture</span>
-                            <iconify-icon icon="lucide:network" width="12"></iconify-icon>
-                        </button>
-                    </div>
-                </div>
-                <div class="case-card gradient-border p-8 reveal reveal-delay-2">
-                    <div class="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-6"><iconify-icon icon="lucide:layout-dashboard" width="20" class="text-accent-purple"></iconify-icon></div>
-                    <h3 class="text-lg font-semibold tracking-tight mb-4">Business Intelligence Platform</h3>
-                    <div class="space-y-4 mb-6">
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Scattered data across multiple systems made it impossible to get a unified business view.</p></div>
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Designed a centralized analytics platform with automated data pipelines and interactive dashboards.</p></div>
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">3× faster decision-making with real-time insights, replacing 5+ disconnected tools.</p></div>
-                    </div>
-                    <div class="pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.05);">
-                        <span class="text-xs text-accent-purple font-medium">Data Science &amp; BI</span>
-                        <button onclick="openArchModal('biPlatform')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
-                            <span>View Architecture</span>
-                            <iconify-icon icon="lucide:network" width="12"></iconify-icon>
-                        </button>
+                <!-- Case 1 -->
+                <div class="cyber-card reveal reveal-delay-1">
+                    <div class="cyber-card-inner p-8">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">CASE_01</span>
+                        <span class="cyber-acc cyber-acc-bl">// WORKFLOW</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-10 h-10 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:users" width="20" class="text-accent-blue"></iconify-icon>
+                        </div>
+                        <h3 class="text-lg font-semibold tracking-tight mb-4 relative z-10">AI Lead Qualification System</h3>
+                        <div class="space-y-4 mb-6 relative z-10">
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Manual lead processing was consuming sales team bandwidth with slow response times.</p></div>
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Built an AI-powered workflow that automatically scores, qualifies, and routes incoming leads.</p></div>
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">70% reduction in manual processing time, boosting sales conversion rates.</p></div>
+                        </div>
+                        <div class="pt-4 flex items-center justify-between relative z-10" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="text-xs text-accent-blue font-medium">AI &amp; Automation</span>
+                            <button onclick="openArchModal('leadGen')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
+                                <span>View Architecture</span>
+                                <iconify-icon icon="lucide:network" width="12"></iconify-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="case-card gradient-border p-8 reveal reveal-delay-3">
-                    <div class="w-10 h-10 rounded-xl bg-glow/10 flex items-center justify-center mb-6"><iconify-icon icon="lucide:search" width="20" class="text-glow"></iconify-icon></div>
-                    <h3 class="text-lg font-semibold tracking-tight mb-4">AI Knowledge Assistant</h3>
-                    <div class="space-y-4 mb-6">
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Information discovery across large document repositories was slow and dependent on key personnel.</p></div>
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Developed a semantic search system powered by embeddings and retrieval-augmented generation.</p></div>
-                        <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">60% improvement in information retrieval speed, cutting research time from hours to minutes.</p></div>
+                
+                <!-- Case 2 -->
+                <div class="cyber-card reveal reveal-delay-2">
+                    <div class="cyber-card-inner p-8">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">CASE_02</span>
+                        <span class="cyber-acc cyber-acc-bl">// ANALYTICS</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-10 h-10 rounded-xl bg-accent-purple/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:layout-dashboard" width="20" class="text-accent-purple"></iconify-icon>
+                        </div>
+                        <h3 class="text-lg font-semibold tracking-tight mb-4 relative z-10">Business Intelligence Platform</h3>
+                        <div class="space-y-4 mb-6 relative z-10">
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Scattered data across multiple systems made it impossible to get a unified business view.</p></div>
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Designed a centralized analytics platform with automated data pipelines and dashboards.</p></div>
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">3× faster decision-making with real-time insights, replacing 5+ disconnected tools.</p></div>
+                        </div>
+                        <div class="pt-4 flex items-center justify-between relative z-10" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="text-xs text-accent-purple font-medium">Data Science &amp; BI</span>
+                            <button onclick="openArchModal('biPlatform')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
+                                <span>View Architecture</span>
+                                <iconify-icon icon="lucide:network" width="12"></iconify-icon>
+                            </button>
+                        </div>
                     </div>
-                    <div class="pt-4 flex items-center justify-between" style="border-top: 1px solid rgba(255,255,255,0.05);">
-                        <span class="text-xs text-glow font-medium">AI Product Development</span>
-                        <button onclick="openArchModal('knowledgeAsst')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
-                            <span>View Architecture</span>
-                            <iconify-icon icon="lucide:network" width="12"></iconify-icon>
-                        </button>
+                </div>
+                
+                <!-- Case 3 -->
+                <div class="cyber-card reveal reveal-delay-3">
+                    <div class="cyber-card-inner p-8">
+                        <div class="cyber-glare"></div>
+                        <div class="cyber-grid"></div>
+                        <span class="cyber-acc cyber-acc-tl">+</span>
+                        <span class="cyber-acc cyber-acc-tr">CASE_03</span>
+                        <span class="cyber-acc cyber-acc-bl">// RAG RAMP</span>
+                        <span class="cyber-acc cyber-acc-br">■</span>
+                        
+                        <div class="w-10 h-10 rounded-xl bg-glow/10 flex items-center justify-center mb-6 relative z-10">
+                            <iconify-icon icon="lucide:search" width="20" class="text-glow"></iconify-icon>
+                        </div>
+                        <h3 class="text-lg font-semibold tracking-tight mb-4 relative z-10">AI Knowledge Assistant</h3>
+                        <div class="space-y-4 mb-6 relative z-10">
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Challenge</span><p class="text-sm text-white/50 mt-1">Information discovery across large document repositories was slow and dependent on key personnel.</p></div>
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Solution</span><p class="text-sm text-white/50 mt-1">Developed a semantic search system powered by embeddings and retrieval-augmented generation.</p></div>
+                            <div><span class="text-[11px] uppercase tracking-widest text-white/30 font-medium">Impact</span><p class="text-sm text-white/70 mt-1">60% improvement in retrieval speed, cutting research time from hours to minutes.</p></div>
+                        </div>
+                        <div class="pt-4 flex items-center justify-between relative z-10" style="border-top: 1px solid rgba(255,255,255,0.05);">
+                            <span class="text-xs text-glow font-medium">AI Product Development</span>
+                            <button onclick="openArchModal('knowledgeAsst')" class="text-xs text-white/40 hover:text-white flex items-center gap-1 transition-colors">
+                                <span>View Architecture</span>
+                                <iconify-icon icon="lucide:network" width="12"></iconify-icon>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2469,6 +2865,276 @@
             quizAnswers.bottleneck = '';
             quizAnswers.timeline = '';
             showQuizStep(1);
+        }
+
+        // ===== DYNAMIC 3D PERSPECTIVE TILT & SPECULAR GLARE =====
+        document.querySelectorAll('.cyber-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                // Track glare position
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+                
+                // 3D perspective rotation
+                const xc = rect.width / 2;
+                const yc = rect.height / 2;
+                const dx = x - xc;
+                const dy = y - yc;
+                
+                const tiltX = -(dy / yc) * 8;
+                const tiltY = (dx / xc) * 8;
+                
+                card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+                card.style.zIndex = '20';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+                card.style.zIndex = 'auto';
+            });
+        });
+
+        // ===== MICRO-TELEMETRY TICKER LOOP =====
+        setInterval(() => {
+            document.querySelectorAll('.telemetry-value').forEach(el => {
+                const type = el.dataset.type;
+                if (type === 'temp') {
+                    el.textContent = `${(37 + Math.random() * 7).toFixed(1)}°C`;
+                } else if (type === 'ms') {
+                    el.textContent = `${Math.floor(15 + Math.random() * 60)}ms`;
+                } else if (type === 'cpu') {
+                    el.textContent = `${(4 + Math.random() * 18).toFixed(1)}%`;
+                }
+            });
+        }, 3000);
+
+        // ===== INTERACTIVE AGENT SANDBOX LOGIC =====
+        let activeSandboxTemplate = 'lead';
+        const sandboxConsole = document.getElementById('sandboxConsole');
+        const sandboxStatusText = document.getElementById('sandboxStatusText');
+        const sandboxResultContent = document.getElementById('sandboxResultContent');
+        const sliderSandboxTemp = document.getElementById('sliderSandboxTemp');
+        const valSandboxTemp = document.getElementById('valSandboxTemp');
+        let isSandboxRunning = false;
+
+        const sandboxAgentData = {
+            lead: {
+                nodes: [
+                    { label: 'INBOUND', icon: 'lucide:arrow-right-to-line' },
+                    { label: 'VERIFY', icon: 'lucide:shield-check' },
+                    { label: 'LLM SCORER', icon: 'lucide:cpu' },
+                    { label: 'CRM ROUTE', icon: 'lucide:check-square' }
+                ],
+                logs: [
+                    '[SYS] Trigger detected via API webhook. Parsing request body...',
+                    '[OK] Request payload parsed successfully.',
+                    '[SYS] querying database for contact deduplication...',
+                    '[DATA] No match found. Initiating brand new contact profile.',
+                    '[AGENT] Analyzing domain: companyemail.com. Alexa rank: 1,421.',
+                    '[SYS] Querying background APIs for company size metrics...',
+                    '[DATA] Company size: 250-500 employees. Industry: SaaS.',
+                    '[AGENT] Feeding compiled metrics to LLM (Model: $model, Temp: $temp)...',
+                    '[LLM] Prompt token count: 1,840. Max output: 256.',
+                    '[LLM] LLM classification output: LEAD_SCORE=92/100.',
+                    '[AGENT] Lead score verified. Criteria matches enterprise routing rules.',
+                    '[SYS] Syncing qualified records to CRM Salesforce...',
+                    '[OK] Salesforce records synchronized. ID: sf_9138402.',
+                    '[SYS] Routing alert to Slack channel #sales-alerts...',
+                    '[AGENT] Execution complete. Telemetry: latency $latency ms.'
+                ],
+                result: `{
+  "status": "success",
+  "leadScore": 92,
+  "route": "Enterprise Sales Team",
+  "deduplicated": false,
+  "crmRecordId": "sf_9138402",
+  "slackNotified": true
+}`
+            },
+            rag: {
+                nodes: [
+                    { label: 'QUERY', icon: 'lucide:search' },
+                    { label: 'EMBEDDING', icon: 'lucide:binary' },
+                    { label: 'VECTOR DB', icon: 'lucide:database' },
+                    { label: 'LLM ANSWER', icon: 'lucide:bot' }
+                ],
+                logs: [
+                    '[SYS] Input query received: "What is our customer onboarding SLA?"',
+                    '[AGENT] Standardizing question query string...',
+                    '[SYS] Requesting semantic embedding vectors from embedding API...',
+                    '[OK] 1536-dimensional vector generated in 85ms.',
+                    '[AGENT] Initiating cosine similarity lookup in Pinecone vector database...',
+                    '[DATA] Vector DB scan complete. Retrieved 3 context chunks.',
+                    '[DATA] Document 1: "onboarding_policy_2026.pdf" (Score: 0.91)',
+                    '[DATA] Document 2: "sla_sheet_v4.docx" (Score: 0.88)',
+                    '[AGENT] Injecting retrieved context chunks into LLM prompt template...',
+                    '[LLM] Prompt token count: 3,420. Model: $model.',
+                    '[LLM] Processing token layers (Temp: $temp)...',
+                    '[LLM] Response string compiled. Checking alignment constraints...',
+                    '[OK] Guardrails passed. No safety flags triggered.',
+                    '[AGENT] Output compiled. Telemetry: latency $latency ms.'
+                ],
+                result: `Based on Document "onboarding_policy_2026.pdf" (SLA section 4.2), the customer onboarding SLA is 24 business hours for premium tier accounts and 48 business hours for standard tier accounts.`
+            },
+            analyst: {
+                nodes: [
+                    { label: 'SQL DB', icon: 'lucide:table-properties' },
+                    { label: 'PANDAS', icon: 'lucide:file-spreadsheet' },
+                    { label: 'FORECAST', icon: 'lucide:activity' },
+                    { label: 'REPORT', icon: 'lucide:check-check' }
+                ],
+                logs: [
+                    '[SYS] Chron task triggered: Revenue forecast compiler.',
+                    '[SYS] Connecting to read-replica SQL database cluster...',
+                    '[SQL] Executing query: "SELECT date, rev FROM sales_history WHERE year=2026"',
+                    '[OK] Query returned 1,480 rows in 42ms.',
+                    '[SYS] Reading data into Pandas dataframe (columns: [date, revenue])...',
+                    '[DATA] Dataframe initialized. Checking for missing values...',
+                    '[DATA] 2 missing records interpolated using linear imputation.',
+                    '[AGENT] Feeding historical records into forecasting model...',
+                    '[SYS] Running Prophet forecast (Model: $model, Temp: $temp)...',
+                    '[OK] Revenue projection model converged at iteration 42.',
+                    '[AGENT] Generating monthly chart reports using matplotlib...',
+                    '[OK] SVG chart compilation complete. Output file: revenue_q3.svg.',
+                    '[SYS] Formatting final executive report summary...',
+                    '[AGENT] Analytical execution complete. Telemetry: latency $latency ms.'
+                ],
+                result: `Predicted Q3 Revenue: $1,420,000 (representing a 12.4% MoM growth rate). Confidence interval: 95% ($1,380,000 - $1,460,000).`
+            }
+        };
+
+        function selectSandboxAgent(type) {
+            if (isSandboxRunning) return;
+            activeSandboxTemplate = type;
+            
+            document.querySelectorAll('.sandbox-nav-btn').forEach(btn => btn.classList.remove('active'));
+            if (type === 'lead') document.getElementById('btnLeadAgent').classList.add('active');
+            else if (type === 'rag') document.getElementById('btnRagAgent').classList.add('active');
+            else if (type === 'analyst') document.getElementById('btnAnalystAgent').classList.add('active');
+            
+            const data = sandboxAgentData[type];
+            for (let i = 0; i < 4; i++) {
+                const node = document.getElementById(`node${i+1}`);
+                const icon = document.getElementById(`nodeIcon${i+1}`);
+                const label = document.getElementById(`nodeLabel${i+1}`);
+                if (node && icon && label && data.nodes[i]) {
+                    label.textContent = data.nodes[i].label;
+                    icon.setAttribute('icon', data.nodes[i].icon);
+                    node.className = "node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10";
+                }
+            }
+            
+            document.getElementById('flowLine1').className.baseVal = "flow-svg-line";
+            document.getElementById('flowLine2').className.baseVal = "flow-svg-line";
+            document.getElementById('flowLine3').className.baseVal = "flow-svg-line";
+            
+            sandboxConsole.innerHTML = `<div class="text-white/30">&gt; Configured ${type.toUpperCase()} node. Ready to initiate pipeline execution.</div>`;
+            sandboxResultContent.textContent = 'Awaiting agent execution...';
+            sandboxResultContent.className = 'text-[11px] font-mono text-white/50 italic';
+            sandboxStatusText.textContent = 'READY_';
+            sandboxStatusText.className = "text-[8px] font-mono text-green-400 bg-green-400/10 px-2 py-0.5 rounded";
+        }
+
+        function updateSandboxTemp(val) {
+            if (valSandboxTemp) valSandboxTemp.textContent = (val / 10).toFixed(1);
+        }
+
+        function runSandboxPipeline() {
+            if (isSandboxRunning) return;
+            isSandboxRunning = true;
+            
+            const btn = document.getElementById('btnRunSandbox');
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            btn.querySelector('span').textContent = 'AGENT RUNNING...';
+            
+            const type = activeSandboxTemplate;
+            const data = sandboxAgentData[type];
+            const modelSelect = document.getElementById('sandboxModel');
+            const modelName = modelSelect ? modelSelect.options[modelSelect.selectedIndex].text : 'Claude 3.5 Sonnet';
+            const tempVal = (sliderSandboxTemp ? sliderSandboxTemp.value / 10 : 0.2).toFixed(1);
+            const latencyVal = Math.floor(600 + Math.random() * 800);
+            
+            sandboxConsole.innerHTML = '';
+            sandboxResultContent.textContent = 'Executing...';
+            sandboxStatusText.textContent = 'EXECUTING_';
+            sandboxStatusText.className = "text-[8px] font-mono text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded";
+            
+            let currentLogIdx = 0;
+            const totalLogs = data.logs.length;
+            
+            const nodeProgress = Math.floor(totalLogs / 4);
+            
+            function printNextLog() {
+                if (currentLogIdx >= totalLogs) {
+                    isSandboxRunning = false;
+                    btn.classList.remove('opacity-50', 'pointer-events-none');
+                    btn.querySelector('span').textContent = 'RUN AGENT PROCESS [F5]';
+                    
+                    if (type === 'lead') {
+                        sandboxResultContent.innerHTML = `<pre class="text-[9.5px] leading-tight text-green-400 overflow-x-auto select-all">${data.result}</pre>`;
+                        sandboxResultContent.className = 'w-full';
+                    } else {
+                        sandboxResultContent.textContent = data.result;
+                        sandboxResultContent.className = 'text-[11px] font-mono text-green-400';
+                    }
+                    sandboxStatusText.textContent = 'COMPLETE_';
+                    sandboxStatusText.className = "text-[8px] font-mono text-green-400 bg-green-400/10 px-2 py-0.5 rounded";
+                    return;
+                }
+                
+                let rawLog = data.logs[currentLogIdx];
+                let formattedLog = rawLog
+                    .replace('$model', modelName)
+                    .replace('$temp', tempVal)
+                    .replace('$latency', latencyVal);
+                
+                const logEl = document.createElement('div');
+                if (formattedLog.startsWith('[SYS]')) {
+                    logEl.className = 'text-white/40';
+                } else if (formattedLog.startsWith('[OK]')) {
+                    logEl.className = 'text-green-400 font-semibold';
+                } else if (formattedLog.startsWith('[DATA]')) {
+                    logEl.className = 'text-blue-300';
+                } else if (formattedLog.startsWith('[LLM]')) {
+                    logEl.className = 'text-purple-300';
+                } else {
+                    logEl.className = 'text-white/70';
+                }
+                logEl.textContent = formattedLog;
+                sandboxConsole.appendChild(logEl);
+                sandboxConsole.scrollTop = sandboxConsole.scrollHeight;
+                
+                const nodeIdx = Math.min(3, Math.floor(currentLogIdx / nodeProgress));
+                for (let i = 0; i < 4; i++) {
+                    const node = document.getElementById(`node${i+1}`);
+                    if (node) {
+                        if (i === nodeIdx) {
+                            const activeColor = nodeIdx === 1 ? 'purple' : (nodeIdx === 2 ? 'glow' : '');
+                            node.className = `node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10 node-flow-active ${activeColor}`;
+                        } else if (i < nodeIdx) {
+                            node.className = "node-flow w-14 h-14 rounded-xl border border-accent-blue/30 bg-accent-blue/5 flex flex-col items-center justify-center gap-1 z-10";
+                        } else {
+                            node.className = "node-flow w-14 h-14 rounded-xl border border-white/10 bg-white/[0.02] flex flex-col items-center justify-center gap-1 z-10";
+                        }
+                    }
+                }
+                
+                if (nodeIdx > 0 && document.getElementById(`flowLine${nodeIdx}`)) {
+                    document.getElementById(`flowLine${nodeIdx}`).className.baseVal = "flow-svg-line active";
+                }
+                
+                currentLogIdx++;
+                setTimeout(printNextLog, 200 + Math.random() * 150);
+            }
+            
+            document.getElementById('flowLine1').className.baseVal = "flow-svg-line";
+            document.getElementById('flowLine2').className.baseVal = "flow-svg-line";
+            document.getElementById('flowLine3').className.baseVal = "flow-svg-line";
+            
+            setTimeout(printNextLog, 200);
         }
     </script>
 </body>
